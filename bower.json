@@ -1,0 +1,18 @@
+{
+    "name": "cloudkid-createjs-display",
+    "version": "0.0.1",
+    "main": "dist/cloudkid-createjs-display.min.js",
+    "dependencies": {
+        "cloudkid-framework" : "*",
+        "easeljs" : "https://github.com/CloudKidStudio/EaselJS.git",
+        "tweenjs" : "https://github.com/CloudKidStudio/TweenJS.git",
+    },
+    "ignore": [
+        "build.xml",
+        "build",
+        "example",
+        "docs",
+        "libs",
+        "src",
+    ]
+}

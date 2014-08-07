@@ -1,0 +1,5 @@
+.DS_Store
+
+/docs/*
+/examples/shared/libs/*
+/node_modules/*

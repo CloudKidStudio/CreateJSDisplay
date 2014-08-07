@@ -1,0 +1,16 @@
+{
+	"name" : "CreateJSDisplay",
+	"version" : "0.0.1",
+	"main" : [
+		"src/CreateJSDisplay.js",
+		"src/Animator.js",
+		"src/AnimatorTimeline.js",
+		"src/BitmapMovieClip.js",
+		"src/BitmapUtils.js",
+		"src/Button.js",
+		"src/CharacterClip.js",
+		"src/CharacterController.js",
+		"src/DragManager.js",
+		"src/TextureAtlas.js"
+	]
+}

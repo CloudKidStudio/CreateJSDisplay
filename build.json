@@ -1,6 +1,8 @@
 {
 	"name" : "CreateJSDisplay",
 	"version" : "0.0.1",
+	"description" : "Renderer plugin for CloudKid Framework",
+	"url" : "http://github.com/CloudKidStudio/CreateJSDisplay",
 	"main" : [
 		"src/CreateJSDisplay.js",
 		"src/Animator.js",

@@ -1,5 +1,4 @@
 .DS_Store
-
-/docs/*
-/examples/shared/libs/*
-/node_modules/*
+.grunt
+docs
+node_modules

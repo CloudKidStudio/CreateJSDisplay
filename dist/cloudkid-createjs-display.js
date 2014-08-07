@@ -7,7 +7,7 @@
 	"use strict";
 
 	/**
-	*   CreateJSDisplay is a display plugin for the CloudKid Application Framework 
+	*   CreateJSDisplay is a display plugin for the CloudKid Framework 
 	*	that uses the EaselJS library for rendering.
 	*
 	*   @class CreateJSDisplay
@@ -219,7 +219,7 @@
 	* @public
 	* @static
 	*/
-	Animator.VERSION = "${version}";
+	Animator.VERSION = "0.0.1";
 	
 	/**
 	* If we fire debug statements 

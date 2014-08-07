@@ -8,11 +8,10 @@
         "tweenjs" : "https://github.com/CloudKidStudio/TweenJS.git",
     },
     "ignore": [
-        "build.xml",
-        "build",
+        "Gruntfile.js",
+        "build.json",
         "example",
         "docs",
-        "libs",
         "src",
     ]
 }

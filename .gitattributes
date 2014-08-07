@@ -1,0 +1,6 @@
+src export-ignore
+Gruntfile.js export-ignore
+build.json export-ignore
+tasks export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore

@@ -1,7 +1,7 @@
 module.exports = {
 
 	// Remove all the build files
-	all: ['<%= distFolder %>/<%= outputFile %>.*'],
+	all: ['<%= distFolder %>/<%= build.output %>.*'],
 
 	// Clean the documentation
 	docs: ['docs']

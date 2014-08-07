@@ -1,7 +1,7 @@
 module.exports = {
 	release: {
 		files: {
-			'<%= distFolder %>/<%= outputFile %>.min.js': '<%= build.main %>'
+			'<%= distFolder %>/<%= build.output %>.min.js': '<%= build.main %>'
 		},
 		options: {
 			compress: {
@@ -11,12 +11,12 @@ module.exports = {
 				},
 				dead_code: true
 			},
-			banner: '/*! <%= build.name %> <%= build.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+			banner: '/*! <%= build.name %> <%= build.version %> */\n'
 		}
 	},
 	development: {
 		files: {
-			'<%= distFolder %>/<%= outputFile %>.debug.js': '<%= build.main %>'
+			'<%= distFolder %>/<%= build.output %>.debug.js': '<%= build.main %>'
 		},
 		options: {
 			compress: {
@@ -26,7 +26,7 @@ module.exports = {
 				},
 				dead_code: true
 			},
-			banner: '/*! <%= build.name %> <%= build.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+			banner: '/*! <%= build.name %> <%= build.version %> */\n'
 		}
 	}
 };

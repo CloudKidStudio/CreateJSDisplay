@@ -1,9 +1,9 @@
 module.exports = {
 	combine: {
 		src: ['<%= build.main %>'],
-		dest: '<%= distFolder %>/<%= outputFile %>.js'
+		dest: '<%= distFolder %>/<%= build.output %>.js'
 	},
 	options: {
-		banner: '/*! <%= build.name %> <%= build.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+		banner: '/*! <%= build.name %> <%= build.version %> */\n'
 	}
 };

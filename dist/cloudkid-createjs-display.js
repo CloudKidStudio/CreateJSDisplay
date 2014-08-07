@@ -1,4 +1,4 @@
-/*! CreateJSDisplay 0.0.1 2014-08-07 */
+/*! CreateJSDisplay 0.0.1 */
 /**
 *  @module cloudkid
 */

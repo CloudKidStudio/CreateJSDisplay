@@ -1,6 +1,6 @@
 module.exports = {
 	combine: {
-		src: ['<%= distFolder %>/<%= outputFile %>.js'],
+		src: ['<%= distFolder %>/<%= build.output %>.js'],
 		overwrite: true,
 		replacements: [
 			{ from: "DEBUG", to: "true" },
@@ -9,14 +9,14 @@ module.exports = {
 		]
 	},
 	release : {
-		src: ['<%= distFolder %>/<%= outputFile %>.min.js'],
+		src: ['<%= distFolder %>/<%= build.output %>.min.js'],
 		overwrite: true,
 		replacements: [
 			{ from: "${version}", to: "<%= build.version %>"}
 		]
 	},
 	development: {
-		src: ['<%= distFolder %>/<%= outputFile %>.debug.js'],
+		src: ['<%= distFolder %>/<%= build.output %>.debug.js'],
 		overwrite: true,
 		replacements: [
 			{ from: "${version}", to: "<%= build.version %>"}

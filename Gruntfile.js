@@ -16,9 +16,6 @@ module.exports = function(grunt) {
 			// The name of the library from the build file
 			build: grunt.file.readJSON('build.json'),
 
-			// The name of the output file
-			outputFile: 'cloudkid-createjs-display',
-
 			// The deploy folder is the content that actually is for distribution
 			distFolder: 'dist',
 		}

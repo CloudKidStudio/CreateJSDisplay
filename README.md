@@ -9,7 +9,7 @@ http://cloudkidstudio.github.io/CreateJSDisplay/
 
 ##Installation##
 
-CloudKid Animation can be install using Bower.
+CloudKid CreateJS Display can be install using Bower.
 
 ```bash
 bower install git@github.com:CloudKidStudio/CreateJSDisplay.git

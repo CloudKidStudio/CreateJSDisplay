@@ -11,12 +11,13 @@
 	*  
 	*  @class DragManager
 	*  @constructor
+	*  @param {createjs.Stage} stage The stage that this DragManager is monitoring.
 	*  @param {function} startCallback The callback when when starting
 	*  @param {function} endCallback The callback when ending
 	*/
-	var DragManager = function(startCallback, endCallback)
+	var DragManager = function(stage, startCallback, endCallback)
 	{
-		this.initialize(startCallback, endCallback);
+		this.initialize(stage, startCallback, endCallback);
 	};
 	
 	/** Reference to the drag manager */
@@ -180,6 +181,7 @@
 	* Constructor 
 	* @method initialize
 	* @constructor
+	* @param {createjs.Stage} stage The stage that this DragManager is monitoring.
 	* @param {function} startCallback The callback when when starting
 	* @param {function} endCallback The callback when ending
 	*/

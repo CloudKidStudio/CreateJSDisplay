@@ -11,10 +11,17 @@
 	*	that uses the EaselJS library for rendering.
 	*
 	*   @class CreateJSDisplay
+	*	@constructor
+	*	@param {String} id The id of the canvas element on the page to draw to.
+	*	@param {Object} options The setup data for the CreateJS stage.
+	*	@param {String} [options.stageType="stage"] If the stage should be a normal stage or a SpriteStage (use "spriteStage").
+	*	@param {Boolean} [options.clearView=false] If the stage should wipe the canvas between renders.
+	*	@param {int} [options.mouseOverRate=30] How many times per second to check for mouseovers. To disable them, use 0 or -1.
 	*/
 	var CreateJSDisplay = function(id, options)
 	{
 		this.id = id;
+		options = options || {};
 		this.canvas = document.getElementById(id);
 		this.width = this.canvas.width;
 		this.height = this.canvas.height;
@@ -30,6 +37,7 @@
 		{
 			this.stage = new createjs.Stage(id);
 		}
+		this.stage.autoClear = !!this.options.clearView;
 		this.enabled = true;//enable mouse/touch input
 	};
 
@@ -87,8 +95,9 @@
 
 	/**
 	*  The rate at which EaselJS calculates mouseover events, in times/second.
-	*  @property {Boolean} mouseOverRate
+	*  @property {int} mouseOverRate
 	*  @public
+	*  @default 30
 	*/
 	p.mouseOverRate = 30;
 
@@ -2891,12 +2900,13 @@
 	*  
 	*  @class DragManager
 	*  @constructor
+	*  @param {createjs.Stage} stage The stage that this DragManager is monitoring.
 	*  @param {function} startCallback The callback when when starting
 	*  @param {function} endCallback The callback when ending
 	*/
-	var DragManager = function(startCallback, endCallback)
+	var DragManager = function(stage, startCallback, endCallback)
 	{
-		this.initialize(startCallback, endCallback);
+		this.initialize(stage, startCallback, endCallback);
 	};
 	
 	/** Reference to the drag manager */
@@ -3060,6 +3070,7 @@
 	* Constructor 
 	* @method initialize
 	* @constructor
+	* @param {createjs.Stage} stage The stage that this DragManager is monitoring.
 	* @param {function} startCallback The callback when when starting
 	* @param {function} endCallback The callback when ending
 	*/
@@ -4119,7 +4130,7 @@
 	
 	/** 
 	*  The UI display object to update 
-	*  @property {createjs.DisplayObject|PIXI.DisplayObject} _parent
+	*  @property {createjs.DisplayObject} _parent
 	*  @private
 	*/
 	p._parent = null;
@@ -4192,7 +4203,7 @@
 	*  Create the scaler from JSON data
 	*  @method fromJSON
 	*  @static
-	*  @param {createjs.DisplayObject|PIXI.DisplayObject} parent The UI display container
+	*  @param {createjs.DisplayObject} parent The UI display container
 	*  @param {Object} jsonSettings The json of the designed settings {designedWidth:800, designedHeight:600, designedPPI:72}
 	*  @param {Object} jsonItems The json items object where the keys are the name of the property on the parent and the value
 	*         is an object with keys of "titleSafe", "minScale", "maxScale", "centerHorizontally", "align"
@@ -4280,7 +4291,7 @@
 	/**
 	*   Manually add an item 
 	*   @method add
-	*   @param {createjs.DisplayObject|PIXI.DisplayObject} item The display object item to add
+	*   @param {createjs.DisplayObject} item The display object item to add
 	*   @param {String} [vertAlign="center"] The vertical align of the item (cefault is center)
 	*   @param {String} [horiAlign="center"] The horizontal align of the item (default is center)
 	*   @param {Boolean} [titleSafe=false] If the item needs to be in the title safe area (default is false)
@@ -4307,7 +4318,7 @@
 	*   Scale a single background image according to the UIScaler.width and height
 	*   @method resizeBackground
 	*   @static
-	*   @param {createjs.Bitmap|PIXI.Bitmap} The bitmap to scale
+	*   @param {createjs.Bitmap} The bitmap to scale
 	*/
 	UIScaler.resizeBackground = function(bitmap)
 	{

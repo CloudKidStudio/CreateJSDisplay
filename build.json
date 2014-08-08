@@ -14,6 +14,11 @@
 		"src/CharacterClip.js",
 		"src/CharacterController.js",
 		"src/DragManager.js",
-		"src/TextureAtlas.js"
+		"src/TextureAtlas.js",
+		"src/scaling/Positioner.js",
+		"src/scaling/ScreenSettings.js",
+		"src/scaling/UIElement.js",
+		"src/scaling/UIElementSettings.js",
+		"src/scaling/UIScaler.js"
 	]
 }

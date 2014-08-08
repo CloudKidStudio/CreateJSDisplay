@@ -166,7 +166,7 @@
 	
 	/** 
 	*  The UI display object to update 
-	*  @property {createjs.DisplayObject|PIXI.DisplayObject} _parent
+	*  @property {createjs.DisplayObject} _parent
 	*  @private
 	*/
 	p._parent = null;
@@ -239,7 +239,7 @@
 	*  Create the scaler from JSON data
 	*  @method fromJSON
 	*  @static
-	*  @param {createjs.DisplayObject|PIXI.DisplayObject} parent The UI display container
+	*  @param {createjs.DisplayObject} parent The UI display container
 	*  @param {Object} jsonSettings The json of the designed settings {designedWidth:800, designedHeight:600, designedPPI:72}
 	*  @param {Object} jsonItems The json items object where the keys are the name of the property on the parent and the value
 	*         is an object with keys of &quot;titleSafe&quot;, &quot;minScale&quot;, &quot;maxScale&quot;, &quot;centerHorizontally&quot;, &quot;align&quot;
@@ -327,7 +327,7 @@
 	/**
 	*   Manually add an item 
 	*   @method add
-	*   @param {createjs.DisplayObject|PIXI.DisplayObject} item The display object item to add
+	*   @param {createjs.DisplayObject} item The display object item to add
 	*   @param {String} [vertAlign=&quot;center&quot;] The vertical align of the item (cefault is center)
 	*   @param {String} [horiAlign=&quot;center&quot;] The horizontal align of the item (default is center)
 	*   @param {Boolean} [titleSafe=false] If the item needs to be in the title safe area (default is false)
@@ -354,7 +354,7 @@
 	*   Scale a single background image according to the UIScaler.width and height
 	*   @method resizeBackground
 	*   @static
-	*   @param {createjs.Bitmap|PIXI.Bitmap} The bitmap to scale
+	*   @param {createjs.Bitmap} The bitmap to scale
 	*/
 	UIScaler.resizeBackground = function(bitmap)
 	{

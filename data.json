@@ -759,6 +759,11 @@
             "is_constructor": 1,
             "params": [
                 {
+                    "name": "stage",
+                    "description": "The stage that this DragManager is monitoring.",
+                    "type": "createjs.Stage"
+                },
+                {
                     "name": "startCallback",
                     "description": "The callback when when starting",
                     "type": "Function"
@@ -1113,7 +1118,7 @@
             "description": "The UI display object to update",
             "itemtype": "property",
             "name": "_parent",
-            "type": "createjs.DisplayObject|PIXI.DisplayObject",
+            "type": "createjs.DisplayObject",
             "access": "private",
             "tagname": "",
             "class": "UIScaler",
@@ -1224,7 +1229,7 @@
                 {
                     "name": "parent",
                     "description": "The UI display container",
-                    "type": "createjs.DisplayObject|PIXI.DisplayObject"
+                    "type": "createjs.DisplayObject"
                 },
                 {
                     "name": "jsonSettings",
@@ -1301,7 +1306,7 @@
                 {
                     "name": "item",
                     "description": "The display object item to add",
-                    "type": "createjs.DisplayObject|PIXI.DisplayObject"
+                    "type": "createjs.DisplayObject"
                 },
                 {
                     "name": "vertAlign",
@@ -1360,7 +1365,7 @@
                 {
                     "name": "The",
                     "description": "bitmap to scale",
-                    "type": "createjs.Bitmap|PIXI.Bitmap"
+                    "type": "createjs.Bitmap"
                 }
             ],
             "class": "UIScaler",
@@ -3655,13 +3660,13 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 22,
+            "line": 23,
             "class": "DragManager",
             "module": "cloudkid"
         },
         {
             "file": "src/DragManager.js",
-            "line": 25,
+            "line": 26,
             "description": "The object that's being dragged",
             "access": "public",
             "tagname": "",
@@ -3674,7 +3679,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 33,
+            "line": 34,
             "description": "The radius in pixel to allow for dragging, or else does sticky click",
             "access": "public",
             "tagname": "",
@@ -3686,7 +3691,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 41,
+            "line": 42,
             "description": "The position x, y of the mouse down on the stage",
             "access": "private",
             "tagname": "",
@@ -3698,7 +3703,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 48,
+            "line": 49,
             "description": "The position x, y of the object when interaction with it started.",
             "access": "private",
             "tagname": "",
@@ -3710,7 +3715,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 55,
+            "line": 56,
             "description": "If sticky click dragging is allowed.",
             "access": "public",
             "tagname": "",
@@ -3723,7 +3728,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 63,
+            "line": 64,
             "description": "Is the move touch based",
             "access": "public",
             "tagname": "",
@@ -3737,7 +3742,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 72,
+            "line": 73,
             "description": "Is the drag being held on mouse down (not sticky clicking)",
             "access": "public",
             "tagname": "",
@@ -3751,7 +3756,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 81,
+            "line": 82,
             "description": "Is the drag a sticky clicking (click on a item, then mouse the mouse)",
             "access": "public",
             "tagname": "",
@@ -3765,7 +3770,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 90,
+            "line": 91,
             "description": "Settings for snapping.\n\n Format for snapping to a list of points:\n\t{\n\t\tmode:\"points\",\n\t\tdist:20,//snap when within 20 pixels/units\n\t\tpoints:[\n\t\t\t{ x: 20, y:30 },\n\t\t\t{ x: 50, y:10 }\n\t\t]\n\t}",
             "access": "public",
             "tagname": "",
@@ -3778,7 +3783,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 109,
+            "line": 110,
             "description": "Reference to the stage",
             "access": "private",
             "tagname": "",
@@ -3790,7 +3795,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 116,
+            "line": 117,
             "description": "The local to global position of the drag",
             "access": "private",
             "tagname": "",
@@ -3802,7 +3807,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 123,
+            "line": 124,
             "description": "Callback when we start dragging",
             "access": "private",
             "tagname": "",
@@ -3814,7 +3819,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 130,
+            "line": 131,
             "description": "Callback when we are done dragging",
             "access": "private",
             "tagname": "",
@@ -3826,7 +3831,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 137,
+            "line": 138,
             "description": "Callback to test for the start a held drag",
             "access": "private",
             "tagname": "",
@@ -3838,7 +3843,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 144,
+            "line": 145,
             "description": "Callback to start a sticky click drag",
             "access": "private",
             "tagname": "",
@@ -3850,7 +3855,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 151,
+            "line": 152,
             "description": "Callback when we are done with the drag",
             "access": "private",
             "tagname": "",
@@ -3862,7 +3867,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 158,
+            "line": 159,
             "description": "The collection of draggable objects",
             "access": "private",
             "tagname": "",
@@ -3874,7 +3879,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 165,
+            "line": 166,
             "description": "The function call when the mouse/touch moves",
             "access": "private",
             "tagname": "",
@@ -3886,7 +3891,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 172,
+            "line": 173,
             "description": "A point for reuse instead of lots of object creation.",
             "access": "private",
             "tagname": "",
@@ -3898,12 +3903,17 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 179,
+            "line": 180,
             "description": "Constructor",
             "itemtype": "method",
             "name": "initialize",
             "is_constructor": 1,
             "params": [
+                {
+                    "name": "stage",
+                    "description": "The stage that this DragManager is monitoring.",
+                    "type": "createjs.Stage"
+                },
                 {
                     "name": "startCallback",
                     "description": "The callback when when starting",
@@ -3920,7 +3930,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 200,
+            "line": 202,
             "description": "Manually starts dragging an object. If a mouse down event is not supplied as the second argument, it \n   defaults to a held drag, that ends as soon as the mouse is released.",
             "itemtype": "method",
             "name": "startDrag",
@@ -3943,7 +3953,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 213,
+            "line": 215,
             "description": "Mouse down on an obmect",
             "itemtype": "method",
             "name": "_objMouseDown",
@@ -3966,7 +3976,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 269,
+            "line": 271,
             "description": "Start the sticky click",
             "itemtype": "method",
             "name": "_triggerStickyClick",
@@ -3977,7 +3987,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 282,
+            "line": 284,
             "description": "Start hold dragging",
             "itemtype": "method",
             "name": "_triggerHeldDrag",
@@ -3995,7 +4005,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 301,
+            "line": 303,
             "description": "Internal start dragging on the stage",
             "itemtype": "method",
             "name": "_startDrag",
@@ -4006,7 +4016,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 317,
+            "line": 319,
             "description": "Stops dragging the currently dragged object.",
             "access": "public",
             "tagname": "",
@@ -4024,7 +4034,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 328,
+            "line": 330,
             "description": "Internal stop dragging on the stage",
             "itemtype": "method",
             "name": "_stopDrag",
@@ -4047,7 +4057,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 351,
+            "line": 353,
             "description": "Update the object position based on the mouse",
             "itemtype": "method",
             "name": "_updateObjPosition",
@@ -4065,7 +4075,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 383,
+            "line": 385,
             "description": "Handles snapping the dragged object to the nearest among a list of points",
             "itemtype": "method",
             "name": "_handlePointSnap",
@@ -4083,7 +4093,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 451,
+            "line": 453,
             "description": "Adds properties and functions to the object - use enableDrag() and disableDrag() on \nobjects to enable/disable them (they start out disabled). Properties added to objects:\n_dragBounds (Rectangle), _onMouseDownListener (Function), _dragMan (cloudkid.DragManager) reference to the DragManager\nthese will override any existing properties of the same name",
             "itemtype": "method",
             "name": "addObject",
@@ -4106,7 +4116,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 482,
+            "line": 484,
             "description": "Removes properties and functions added by addObject().",
             "access": "public",
             "tagname": "",
@@ -4124,7 +4134,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 501,
+            "line": 503,
             "description": "Destroy the manager",
             "access": "public",
             "tagname": "",
@@ -4135,7 +4145,7 @@
         },
         {
             "file": "src/DragManager.js",
-            "line": 537,
+            "line": 539,
             "class": "DragManager",
             "module": "cloudkid"
         },
@@ -4416,11 +4426,11 @@
         },
         {
             "message": "Missing item type",
-            "line": " src/DragManager.js:22"
+            "line": " src/DragManager.js:23"
         },
         {
             "message": "Missing item type",
-            "line": " src/DragManager.js:537"
+            "line": " src/DragManager.js:539"
         }
     ]
 }

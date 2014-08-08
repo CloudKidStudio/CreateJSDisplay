@@ -154,8 +154,7 @@
 	});
 
 	/**
-	* Resizes the canvas, and tells the rendering library if it needs to know (PixiJS does)
-	* this is only called by the Application
+	* Resizes the canvas. This is only called by the Application.
 	* @method resize
 	* @internal
 	* @param {int} width The width that the display should be
@@ -182,7 +181,7 @@
 	};
 
 	/**
-	*  Destroy and don't use after this, this method is called by the Application and should 
+	*  Destroys the display. This method is called by the Application and should 
 	*  not be called directly, use Application.removeDisplay(id). 
 	*  The stage recursively removes all display objects here.
 	*  @method destroy

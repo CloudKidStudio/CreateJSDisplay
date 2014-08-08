@@ -481,7 +481,7 @@
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l184"><code>destroy:184</code></a>
+        <a href="../files/src_CreateJSDisplay.js.html#l183"><code>destroy:183</code></a>
         
         </p>
 
@@ -492,7 +492,7 @@
     </div>
 
     <div class="description">
-        <p>Destroy and don&#39;t use after this, this method is called by the Application and should 
+        <p>Destroys the display. This method is called by the Application and should 
 not be called directly, use Application.removeDisplay(id). 
 The stage recursively removes all display objects here.</p>
 
@@ -548,7 +548,7 @@ The stage recursively removes all display objects here.</p>
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l170"><code>render:170</code></a>
+        <a href="../files/src_CreateJSDisplay.js.html#l169"><code>render:169</code></a>
         
         </p>
 
@@ -559,8 +559,8 @@ The stage recursively removes all display objects here.</p>
     </div>
 
     <div class="description">
-        <p>Updates the stage and draws it. Elapsed is a parameter because CreateJS needs it, PixiJS doesn&#39;t care.
-this is only called by the Application. This method does nothing if paused is true.</p>
+        <p>Updates the stage and draws it. This is only called by the Application. 
+This method does nothing if paused is true or visible is false.</p>
 
     </div>
 
@@ -579,7 +579,8 @@ this is only called by the Application. This method does nothing if paused is tr
                     
 
                     <div class="param-description">
-                         
+                        <p>The time elapsed since the previous frame.</p>
+
                     </div>
 
                     
@@ -654,8 +655,7 @@ this is only called by the Application. This method does nothing if paused is tr
     </div>
 
     <div class="description">
-        <p>Resizes the canvas, and tells the rendering library if it needs to know (PixiJS does)
-this is only called by the Application</p>
+        <p>Resizes the canvas. This is only called by the Application.</p>
 
     </div>
 

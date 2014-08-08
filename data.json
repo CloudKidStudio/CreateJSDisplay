@@ -3612,7 +3612,7 @@
         {
             "file": "src/CreateJSDisplay.js",
             "line": 156,
-            "description": "Resizes the canvas, and tells the rendering library if it needs to know (PixiJS does)\nthis is only called by the Application",
+            "description": "Resizes the canvas. This is only called by the Application.",
             "itemtype": "method",
             "name": "resize",
             "internal": "",
@@ -3633,15 +3633,15 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 170,
-            "description": "Updates the stage and draws it. Elapsed is a parameter because CreateJS needs it, PixiJS doesn't care.\nthis is only called by the Application. This method does nothing if paused is true.",
+            "line": 169,
+            "description": "Updates the stage and draws it. This is only called by the Application. \nThis method does nothing if paused is true or visible is false.",
             "itemtype": "method",
             "name": "render",
             "internal": "",
             "params": [
                 {
                     "name": "elapsed",
-                    "description": "",
+                    "description": "The time elapsed since the previous frame.",
                     "type": "Int"
                 }
             ],
@@ -3650,8 +3650,8 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 184,
-            "description": "Destroy and don't use after this, this method is called by the Application and should \nnot be called directly, use Application.removeDisplay(id). \nThe stage recursively removes all display objects here.",
+            "line": 183,
+            "description": "Destroys the display. This method is called by the Application and should \nnot be called directly, use Application.removeDisplay(id). \nThe stage recursively removes all display objects here.",
             "itemtype": "method",
             "name": "destroy",
             "internal": "",
@@ -4418,11 +4418,11 @@
         },
         {
             "message": "unknown tag: internal",
-            "line": " src/CreateJSDisplay.js:170"
+            "line": " src/CreateJSDisplay.js:169"
         },
         {
             "message": "unknown tag: internal",
-            "line": " src/CreateJSDisplay.js:184"
+            "line": " src/CreateJSDisplay.js:183"
         },
         {
             "message": "Missing item type",

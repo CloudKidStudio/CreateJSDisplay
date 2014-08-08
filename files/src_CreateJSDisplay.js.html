@@ -273,8 +273,7 @@
 	});
 
 	/**
-	* Resizes the canvas, and tells the rendering library if it needs to know (PixiJS does)
-	* this is only called by the Application
+	* Resizes the canvas. This is only called by the Application.
 	* @method resize
 	* @internal
 	* @param {int} width The width that the display should be
@@ -287,11 +286,11 @@
 	};
 
 	/** 
-	* Updates the stage and draws it. Elapsed is a parameter because CreateJS needs it, PixiJS doesn&#x27;t care.
-	* this is only called by the Application. This method does nothing if paused is true.
+	* Updates the stage and draws it. This is only called by the Application. 
+	* This method does nothing if paused is true or visible is false.
 	* @method render
 	* @internal
-	* @param {int} elapsed
+	* @param {int} elapsed The time elapsed since the previous frame.
 	*/
 	p.render = function(elapsed)
 	{
@@ -301,7 +300,7 @@
 	};
 
 	/**
-	*  Destroy and don&#x27;t use after this, this method is called by the Application and should 
+	*  Destroys the display. This method is called by the Application and should 
 	*  not be called directly, use Application.removeDisplay(id). 
 	*  The stage recursively removes all display objects here.
 	*  @method destroy

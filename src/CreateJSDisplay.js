@@ -36,7 +36,12 @@
 		{
 			this.stage = new createjs.Stage(id);
 		}
-		this.stage.autoClear = !!this.options.clearView;
+		this.stage.autoClear = !!options.clearView;
+		// prevent mouse down turning into text cursor
+		this.canvas.onmousedown = function(e)
+		{
+			e.preventDefault();
+		};
 		this.enabled = true;//enable mouse/touch input
 	};
 
@@ -191,6 +196,7 @@
 	{
 		this.enabled = false;
 		this.stage.removeAllChildren(true);
+		this.canvas.onmousedown = null;
 		this.stage = this.canvas = null;
 	};
 

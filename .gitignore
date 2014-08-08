@@ -2,3 +2,4 @@
 .grunt
 docs
 node_modules
+examples/libs

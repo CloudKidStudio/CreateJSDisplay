@@ -168,11 +168,11 @@
 	};
 
 	/** 
-	* Updates the stage and draws it. Elapsed is a parameter because CreateJS needs it, PixiJS doesn't care.
-	* this is only called by the Application. This method does nothing if paused is true.
+	* Updates the stage and draws it. This is only called by the Application. 
+	* This method does nothing if paused is true or visible is false.
 	* @method render
 	* @internal
-	* @param {int} elapsed
+	* @param {int} elapsed The time elapsed since the previous frame.
 	*/
 	p.render = function(elapsed)
 	{

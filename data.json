@@ -705,7 +705,43 @@
             "namespace": "",
             "file": "src/CreateJSDisplay.js",
             "line": 8,
-            "description": "CreateJSDisplay is a display plugin for the CloudKid Framework \n\tthat uses the EaselJS library for rendering."
+            "description": "CreateJSDisplay is a display plugin for the CloudKid Framework \n\tthat uses the EaselJS library for rendering.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The id of the canvas element on the page to draw to.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "The setup data for the CreateJS stage.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "stageType",
+                            "description": "If the stage should be a normal stage or a SpriteStage (use \"spriteStage\").",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "\"stage\""
+                        },
+                        {
+                            "name": "clearView",
+                            "description": "If the stage should wipe the canvas between renders.",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": "false"
+                        },
+                        {
+                            "name": "mouseOverRate",
+                            "description": "How many times per second to check for mouseovers. To disable them, use 0 or -1.",
+                            "type": "Int",
+                            "optional": true,
+                            "optdefault": "30"
+                        }
+                    ]
+                }
+            ]
         },
         "DragManager": {
             "name": "DragManager",
@@ -3432,7 +3468,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 37,
+            "line": 45,
             "description": "the canvas managed by this display",
             "itemtype": "property",
             "name": "canvas",
@@ -3445,7 +3481,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 45,
+            "line": 53,
             "description": "The DOM id for the canvas",
             "itemtype": "property",
             "name": "id",
@@ -3458,7 +3494,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 53,
+            "line": 61,
             "description": "Convenience method for getting the width of the canvas element\nwould be the same thing as canvas.width",
             "itemtype": "property",
             "name": "width",
@@ -3471,7 +3507,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 62,
+            "line": 70,
             "description": "Convenience method for getting the height of the canvas element\nwould be the same thing as canvas.height",
             "itemtype": "property",
             "name": "height",
@@ -3484,7 +3520,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 71,
+            "line": 79,
             "description": "The rendering library's stage element, the root display object",
             "itemtype": "property",
             "name": "",
@@ -3497,7 +3533,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 79,
+            "line": 87,
             "description": "If rendering is paused on this display only. Pausing all displays can be done\nusing Application.paused setter.",
             "itemtype": "property",
             "name": "paused",
@@ -3509,19 +3545,20 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 87,
+            "line": 95,
             "description": "The rate at which EaselJS calculates mouseover events, in times/second.",
             "itemtype": "property",
             "name": "mouseOverRate",
-            "type": "Boolean",
+            "type": "Int",
             "access": "public",
             "tagname": "",
+            "default": "30",
             "class": "CreateJSDisplay",
             "module": "cloudkid"
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 94,
+            "line": 103,
             "description": "If input is enabled on the stage.",
             "itemtype": "property",
             "name": "_enabled",
@@ -3533,7 +3570,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 101,
+            "line": 110,
             "description": "If input is enabled on the stage for this display. The default is true.",
             "itemtype": "property",
             "name": "enabled",
@@ -3545,7 +3582,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 126,
+            "line": 135,
             "description": "If the display is visible.",
             "itemtype": "property",
             "name": "_visible",
@@ -3557,7 +3594,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 133,
+            "line": 142,
             "description": "If the display is visible, using \"display: none\" css on the canvas. Invisible displays won't render.",
             "itemtype": "property",
             "name": "visible",
@@ -3569,7 +3606,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 147,
+            "line": 156,
             "description": "Resizes the canvas, and tells the rendering library if it needs to know (PixiJS does)\nthis is only called by the Application",
             "itemtype": "method",
             "name": "resize",
@@ -3591,7 +3628,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 161,
+            "line": 170,
             "description": "Updates the stage and draws it. Elapsed is a parameter because CreateJS needs it, PixiJS doesn't care.\nthis is only called by the Application. This method does nothing if paused is true.",
             "itemtype": "method",
             "name": "render",
@@ -3608,7 +3645,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 175,
+            "line": 184,
             "description": "Destroy and don't use after this, this method is called by the Application and should \nnot be called directly, use Application.removeDisplay(id). \nThe stage recursively removes all display objects here.",
             "itemtype": "method",
             "name": "destroy",
@@ -4367,15 +4404,15 @@
         },
         {
             "message": "unknown tag: internal",
-            "line": " src/CreateJSDisplay.js:147"
+            "line": " src/CreateJSDisplay.js:156"
         },
         {
             "message": "unknown tag: internal",
-            "line": " src/CreateJSDisplay.js:161"
+            "line": " src/CreateJSDisplay.js:170"
         },
         {
             "message": "unknown tag: internal",
-            "line": " src/CreateJSDisplay.js:175"
+            "line": " src/CreateJSDisplay.js:184"
         },
         {
             "message": "Missing item type",

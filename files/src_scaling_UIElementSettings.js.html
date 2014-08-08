@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.ico">
     <script src="http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
-	<title>CreateJSDisplay v0.0.1 API Documentation : src/CreateJSDisplay.js</title>  
+	<title>CreateJSDisplay v0.0.1 API Documentation : src/scaling/UIElementSettings.js</title>  
 </head>
 <body class="yui3-skin-sam">
 
@@ -111,204 +111,68 @@
                 <div id="docs-main">
                     <div class="content">
                         <script>
-	var name = src/CreateJSDisplay.js      
+	var name = src/scaling/UIElementSettings.js      
 </script>
-<h1 class="file-heading">File:CreateJSDisplay.js</h1>
+<h1 class="file-heading">File:UIElementSettings.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
-/**
-*  @module cloudkid
-*/
-(function(undefined){
-
+(function() {
+	
 	&quot;use strict&quot;;
 
 	/**
-	*   CreateJSDisplay is a display plugin for the CloudKid Framework 
-	*	that uses the EaselJS library for rendering.
-	*
-	*   @class CreateJSDisplay
+	*  The UI Item Settings which is the positioning settings used to adjust each element
+	*  @module cloudkid
+	*  @class UIElementSettings
 	*/
-	var CreateJSDisplay = function(id, options)
-	{
-		this.id = id;
-		this.canvas = document.getElementById(id);
-		this.width = this.canvas.width;
-		this.height = this.canvas.height;
-		this._visible = this.canvas.style.display != &quot;none&quot;;
-		if(options.mouseOverRate !== undefined)
-			this.mouseOverRate = options.mouseOverRate;
-		//make stage
-		if(options.stageType == &quot;spriteStage&quot;)
-		{
-			//TODO: make a sprite stage (not officially released yet)
-		}
-		else
-		{
-			this.stage = new createjs.Stage(id);
-		}
-		this.enabled = true;//enable mouse/touch input
-	};
-
-	var p = CreateJSDisplay.prototype = {};
-
-	/**
-	*  the canvas managed by this display
-	*  @property {DOMElement} canvas
-	*  @readOnly
-	*  @public
+	var UIElementSettings = function(){};
+	
+	// Reference to the prototype
+	var p = UIElementSettings.prototype = {};
+	
+	/** 
+	*  What vertical screen location the item should be aligned to: &quot;top&quot;, &quot;center&quot;, &quot;bottom&quot;
+	*  @property {String} vertAlign
 	*/
-	p.canvas = null;
-
-	/**
-	*  The DOM id for the canvas
-	*  @property {String} id
-	*  @readOnly
-	*  @public
-	*/
-	p.id = null;
-
-	/**
-	*  Convenience method for getting the width of the canvas element
-	*  would be the same thing as canvas.width
-	*  @property {int} width
-	*  @readOnly
-	*  @public
-	*/
-	p.width = 0;
-
-	/**
-	*  Convenience method for getting the height of the canvas element
-	*  would be the same thing as canvas.height
-	*  @property {int} height
-	*  @readOnly
-	*  @public
-	*/
-	p.height = 0;
-
-	/**
-	*  The rendering library&#x27;s stage element, the root display object
-	*  @property {createjs.Stage|createjs.SpriteStage}
-	*  @readOnly
-	*  @public
-	*/
-	p.stage = null;
-
-	/**
-	*  If rendering is paused on this display only. Pausing all displays can be done
-	*  using Application.paused setter.
-	*  @property {Boolean} paused
-	*  @public
-	*/
-	p.paused = false;
-
-	/**
-	*  The rate at which EaselJS calculates mouseover events, in times/second.
-	*  @property {Boolean} mouseOverRate
-	*  @public
-	*/
-	p.mouseOverRate = 30;
-
-	/**
-	*  If input is enabled on the stage.
-	*  @property {Boolean} _enabled
-	*  @private
-	*/
-	p._enabled = false;
-
-	/**
-	*  If input is enabled on the stage for this display. The default is true.
-	*  @property {Boolean} enabled
-	*  @public
-	*/
-	Object.defineProperty(p, &quot;enabled&quot;, {
-		get: function(){ return this._enabled; },
-		set: function(value)
-		{
-			this._enabled = value;
-			if(value)
-			{
-				this.stage.enableMouseOver(this.mouseOverRate);
-				this.stage.enableDOMEvents(true);
-				createjs.Touch.enable(this.stage);
-			}
-			else
-			{
-				this.stage.enableMouseOver(false);
-				this.stage.enableDOMEvents(false);
-				createjs.Touch.disable(this.stage);
-			}
-		}
-	});
-
-	/**
-	*  If the display is visible.
-	*  @property {Boolean} _visible
-	*  @private
-	*/
-	p._visible = false;
-
-	/**
-	*  If the display is visible, using &quot;display: none&quot; css on the canvas. Invisible displays won&#x27;t render.
-	*  @property {Boolean} visible
-	*  @public
-	*/
-	Object.defineProperty(p, &quot;visible&quot;, {
-		get: function(){ return this._visible; },
-		set: function(value)
-		{
-			this._visible = value;
-			this.canvas.style.display = value ? &quot;block&quot; : &quot;none&quot;;
-		}
-	});
-
-	/**
-	* Resizes the canvas, and tells the rendering library if it needs to know (PixiJS does)
-	* this is only called by the Application
-	* @method resize
-	* @internal
-	* @param {int} width The width that the display should be
-	* @param {int} height The height that the display should be
-	*/
-	p.resize = function(width, height)
-	{
-		this.canvas.width = width;
-		this.canvas.height = height;
-	};
+	p.vertAlign = null;
 
 	/** 
-	* Updates the stage and draws it. Elapsed is a parameter because CreateJS needs it, PixiJS doesn&#x27;t care.
-	* this is only called by the Application. This method does nothing if paused is true.
-	* @method render
-	* @internal
-	* @param {int} elapsed
+	*  What horizontal screen location the item should be aligned to: &quot;left&quot;, &quot;center&quot;, &quot;right&quot;
+	*  @property {String} horiAlign
 	*/
-	p.render = function(elapsed)
-	{
-		if(this.paused || !this._visible) return;
+	p.horiAlign = null;
 
-		this.stage.update(elapsed);
-	};
+	/** 
+	*  If this element should be aligned to the title safe area, not the actual screen 
+	*  @property {Boolean} titleSafe
+	*  @default false
+	*/
+	p.titleSafe = false;
 
+	/** 
+	*  Maximum scale allowed in physical size 
+	*  @property {Number} maxScale
+	*  @default 1
+	*/
+	p.maxScale = 1;
+
+	/** 
+	*  Minimum scale allowed in physical size 
+	*  @property {Number} minScale
+	*  @default 1
+	*/
+	p.minScale = 1;
+	
 	/**
-	*  Destroy and don&#x27;t use after this, this method is called by the Application and should 
-	*  not be called directly, use Application.removeDisplay(id). 
-	*  The stage recursively removes all display objects here.
-	*  @method destroy
-	*  @internal
+	*  If the UI element is centered horizontally
+	*  @property {Boolean} centeredHorizontally
+	*  @default false
 	*/
-	p.destroy = function()
-	{
-		this.enabled = false;
-		this.stage.removeAllChildren(true);
-		this.stage = this.canvas = null;
-	};
-
-	// Assign to the global namespace
-	namespace(&#x27;cloudkid&#x27;).CreateJSDisplay = CreateJSDisplay;
-	namespace(&#x27;cloudkid.createjs&#x27;).CreateJSDisplay = CreateJSDisplay;
-
+	p.centeredHorizontally = false;
+	
+	namespace(&#x27;cloudkid&#x27;).UIElementSettings = UIElementSettings;
+	namespace(&#x27;cloudkid.createjs&#x27;).UIElementSettings = UIElementSettings;
 }());
     </pre>
 </div>

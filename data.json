@@ -6,11 +6,56 @@
         "url": "http://github.com/CloudKidStudio/CreateJSDisplay"
     },
     "files": {
-        "src/Animator.js": {
-            "name": "src/Animator.js",
+        "src/scaling/Positioner.js": {
+            "name": "src/scaling/Positioner.js",
             "modules": {
                 "cloudkid": 1
             },
+            "classes": {
+                "Positioner": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/scaling/ScreenSettings.js": {
+            "name": "src/scaling/ScreenSettings.js",
+            "modules": {},
+            "classes": {
+                "ScreenSettings": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/scaling/UIElement.js": {
+            "name": "src/scaling/UIElement.js",
+            "modules": {},
+            "classes": {
+                "UIElement": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/scaling/UIElementSettings.js": {
+            "name": "src/scaling/UIElementSettings.js",
+            "modules": {},
+            "classes": {
+                "UIElementSettings": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/scaling/UIScaler.js": {
+            "name": "src/scaling/UIScaler.js",
+            "modules": {},
+            "classes": {
+                "UIScaler": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/Animator.js": {
+            "name": "src/Animator.js",
+            "modules": {},
             "classes": {
                 "Animator": 1
             },
@@ -105,6 +150,11 @@
             "name": "cloudkid",
             "submodules": {},
             "classes": {
+                "Positioner": 1,
+                "ScreenSettings": 1,
+                "UIElement": 1,
+                "UIElementSettings": 1,
+                "UIScaler": 1,
                 "Animator": 1,
                 "AnimatorTimeline": 1,
                 "BitmapMovieClip": 1,
@@ -121,10 +171,99 @@
             "namespaces": {},
             "tag": "module",
             "file": "src/TextureAtlas.js",
-            "line": 145
+            "line": 145,
+            "description": "Initially layouts all interface elements",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "width",
+                    "description": "The screen width in pixels",
+                    "type": "Number"
+                },
+                {
+                    "name": "height",
+                    "description": "The screen height in pixels",
+                    "type": "Number"
+                },
+                {
+                    "name": "ppi",
+                    "description": "The screen pixel density (PPI)",
+                    "type": "Number"
+                }
+            ]
         }
     },
     "classes": {
+        "Positioner": {
+            "name": "Positioner",
+            "shortname": "Positioner",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "cloudkid",
+            "namespace": "",
+            "file": "src/scaling/Positioner.js",
+            "line": 5,
+            "description": "Initially layouts all interface elements"
+        },
+        "ScreenSettings": {
+            "name": "ScreenSettings",
+            "shortname": "ScreenSettings",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "cloudkid",
+            "namespace": "",
+            "file": "src/scaling/ScreenSettings.js",
+            "line": 5,
+            "description": "Object that contains the screen settings to help scaling"
+        },
+        "UIElement": {
+            "name": "UIElement",
+            "shortname": "UIElement",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "cloudkid",
+            "namespace": "",
+            "file": "src/scaling/UIElement.js",
+            "line": 8,
+            "description": "A single UI item that needs to be resized"
+        },
+        "UIElementSettings": {
+            "name": "UIElementSettings",
+            "shortname": "UIElementSettings",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "cloudkid",
+            "namespace": "",
+            "file": "src/scaling/UIElementSettings.js",
+            "line": 5,
+            "description": "The UI Item Settings which is the positioning settings used to adjust each element"
+        },
+        "UIScaler": {
+            "name": "UIScaler",
+            "shortname": "UIScaler",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "cloudkid",
+            "namespace": "",
+            "file": "src/scaling/UIScaler.js",
+            "line": 10,
+            "description": "The UI scale is responsible for scaling UI components\nto help easy the burden of different device aspect ratios"
+        },
         "Animator": {
             "name": "Animator",
             "shortname": "Animator",
@@ -638,6 +777,594 @@
         }
     },
     "classitems": [
+        {
+            "file": "src/scaling/Positioner.js",
+            "line": 15,
+            "description": "Initial position of all layout items",
+            "itemtype": "method",
+            "name": "positionItems",
+            "static": 1,
+            "params": [
+                {
+                    "name": "parent",
+                    "description": "",
+                    "type": "createjs.DisplayObject"
+                },
+                {
+                    "name": "itemSettings",
+                    "description": "JSON format with position information",
+                    "type": "Object"
+                }
+            ],
+            "class": "Positioner",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/Positioner.js",
+            "line": 59,
+            "description": "Create the polygon hit area for interface elements",
+            "static": 1,
+            "itemtype": "method",
+            "name": "generateHitArea",
+            "params": [
+                {
+                    "name": "hitArea",
+                    "description": "One of the following: <br/>\n* An array of points for a polygon, e.g. \n\n\t\t[{x:0, y:0}, {x:0, y:20}, {x:20, y:0}]\n\n* An object describing a rectangle, e.g.\n\n\t\t{type:\"rect\", x:0, y:0, w:10, h:30}\n\n* An object describing an ellipse, where x and y are the center, e.g. \n\n\t\t{type:\"ellipse\", x:0, y:0, w:10, h:30}\n\n* An object describing a circle, where x and y are the center, e.g.\n\n\t\t{type:\"circle\", x:0, y:0, r:20}",
+                    "type": "Object|Array"
+                },
+                {
+                    "name": "scale=1",
+                    "description": "The size to scale hitArea by",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "A geometric shape object for hit testing, either a Polygon, Rectangle, Ellipse, or Circle,\n    depending on the hitArea object. The shape will have a contains() function for hit testing.",
+                "type": "Object"
+            },
+            "class": "Positioner",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/ScreenSettings.js",
+            "line": 16,
+            "description": "The screen width in pixels",
+            "itemtype": "property",
+            "name": "width",
+            "type": "Number",
+            "class": "ScreenSettings",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/ScreenSettings.js",
+            "line": 22,
+            "description": "The screen height in pixels",
+            "itemtype": "property",
+            "name": "height",
+            "type": "Number",
+            "class": "ScreenSettings",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/ScreenSettings.js",
+            "line": 28,
+            "description": "The screen pixel density (PPI)",
+            "itemtype": "property",
+            "name": "ppi",
+            "type": "Number",
+            "class": "ScreenSettings",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElement.js",
+            "line": 75,
+            "description": "Original horizontal margin in pixels",
+            "itemtype": "property",
+            "name": "origMarginHori",
+            "type": "Number",
+            "default": "0",
+            "class": "UIElement",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElement.js",
+            "line": 82,
+            "description": "Original vertical margin in pixels",
+            "itemtype": "property",
+            "name": "origMarginVert",
+            "type": "Number",
+            "default": "0",
+            "class": "UIElement",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElement.js",
+            "line": 89,
+            "description": "Original width in pixels",
+            "itemtype": "property",
+            "name": "origWidth",
+            "type": "Number",
+            "default": "0",
+            "class": "UIElement",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElement.js",
+            "line": 96,
+            "description": "Original X scale of the item",
+            "itemtype": "property",
+            "name": "origScaleX",
+            "type": "Number",
+            "default": "0",
+            "class": "UIElement",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElement.js",
+            "line": 103,
+            "description": "The original Y scale of the item",
+            "itemtype": "property",
+            "name": "origScaleY",
+            "type": "Number",
+            "default": "0",
+            "class": "UIElement",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElement.js",
+            "line": 110,
+            "description": "The original bounds of the item with x, y, right, bottom, width, height properties.\nUsed to determine the distance to each edge of the item from its origin",
+            "itemtype": "property",
+            "name": "origBounds",
+            "type": "Object",
+            "class": "UIElement",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElement.js",
+            "line": 117,
+            "description": "The reference to the scale settings",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_settings",
+            "type": "UIElementSettings",
+            "class": "UIElement",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElement.js",
+            "line": 124,
+            "description": "The reference to the interface item we're scaling",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_item",
+            "type": "createjs.DisplayObject|PIXI.DisplayObject",
+            "class": "UIElement",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElement.js",
+            "line": 131,
+            "description": "The original screen the item was designed for",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_designedScreen",
+            "type": "ScreenSettings",
+            "class": "UIElement",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElement.js",
+            "line": 138,
+            "description": "Adjust the item scale and position, to reflect new screen",
+            "itemtype": "method",
+            "name": "resize",
+            "params": [
+                {
+                    "name": "newScreen",
+                    "description": "The current screen settings",
+                    "type": "ScreenSettings"
+                }
+            ],
+            "class": "UIElement",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElement.js",
+            "line": 238,
+            "description": "Destroy this item, don't use after this",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "UIElement",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElementSettings.js",
+            "line": 15,
+            "description": "What vertical screen location the item should be aligned to: \"top\", \"center\", \"bottom\"",
+            "itemtype": "property",
+            "name": "vertAlign",
+            "type": "String",
+            "class": "UIElementSettings",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElementSettings.js",
+            "line": 21,
+            "description": "What horizontal screen location the item should be aligned to: \"left\", \"center\", \"right\"",
+            "itemtype": "property",
+            "name": "horiAlign",
+            "type": "String",
+            "class": "UIElementSettings",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElementSettings.js",
+            "line": 27,
+            "description": "If this element should be aligned to the title safe area, not the actual screen",
+            "itemtype": "property",
+            "name": "titleSafe",
+            "type": "Boolean",
+            "default": "false",
+            "class": "UIElementSettings",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElementSettings.js",
+            "line": 34,
+            "description": "Maximum scale allowed in physical size",
+            "itemtype": "property",
+            "name": "maxScale",
+            "type": "Number",
+            "default": "1",
+            "class": "UIElementSettings",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElementSettings.js",
+            "line": 41,
+            "description": "Minimum scale allowed in physical size",
+            "itemtype": "property",
+            "name": "minScale",
+            "type": "Number",
+            "default": "1",
+            "class": "UIElementSettings",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIElementSettings.js",
+            "line": 48,
+            "description": "If the UI element is centered horizontally",
+            "itemtype": "property",
+            "name": "centeredHorizontally",
+            "type": "Boolean",
+            "default": "false",
+            "class": "UIElementSettings",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 32,
+            "description": "The current screen settings",
+            "itemtype": "property",
+            "name": "currentScreen",
+            "type": "ScreenSettings",
+            "static": 1,
+            "access": "private",
+            "tagname": "",
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 40,
+            "description": "If the screensize has been set",
+            "itemtype": "property",
+            "name": "initialized",
+            "type": "Boolean",
+            "static": 1,
+            "access": "private",
+            "tagname": "",
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 48,
+            "description": "The UI display object to update",
+            "itemtype": "property",
+            "name": "_parent",
+            "type": "createjs.DisplayObject|PIXI.DisplayObject",
+            "access": "private",
+            "tagname": "",
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 55,
+            "description": "The screen settings object, contains information about designed size",
+            "itemtype": "property",
+            "name": "_designedScreen",
+            "type": "ScreenSettings",
+            "access": "private",
+            "tagname": "",
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 62,
+            "description": "The configuration for each items",
+            "itemtype": "property",
+            "name": "_items",
+            "type": "Array",
+            "access": "private",
+            "tagname": "",
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 69,
+            "description": "Vertically align to the top",
+            "itemtype": "property",
+            "name": "ALIGN_TOP",
+            "type": "String",
+            "static": 1,
+            "final": 1,
+            "readonly": "",
+            "default": "\"top\"",
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 79,
+            "description": "Vertically align to the bottom",
+            "itemtype": "property",
+            "name": "ALIGN_BOTTOM",
+            "type": "String",
+            "static": 1,
+            "final": 1,
+            "readonly": "",
+            "default": "\"bottom\"",
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 89,
+            "description": "Horizontally align to the left",
+            "itemtype": "property",
+            "name": "ALIGN_LEFT",
+            "type": "String",
+            "static": 1,
+            "final": 1,
+            "readonly": "",
+            "default": "\"left\"",
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 99,
+            "description": "Horizontally align to the right",
+            "itemtype": "property",
+            "name": "ALIGN_RIGHT",
+            "type": "String",
+            "static": 1,
+            "final": 1,
+            "readonly": "",
+            "default": "\"right\"",
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 109,
+            "description": "Vertically or horizontally align to the center",
+            "itemtype": "property",
+            "name": "ALIGN_CENTER",
+            "type": "String",
+            "static": 1,
+            "final": 1,
+            "readonly": "",
+            "default": "\"center\"",
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 119,
+            "description": "Create the scaler from JSON data",
+            "itemtype": "method",
+            "name": "fromJSON",
+            "static": 1,
+            "params": [
+                {
+                    "name": "parent",
+                    "description": "The UI display container",
+                    "type": "createjs.DisplayObject|PIXI.DisplayObject"
+                },
+                {
+                    "name": "jsonSettings",
+                    "description": "The json of the designed settings {designedWidth:800, designedHeight:600, designedPPI:72}",
+                    "type": "Object"
+                },
+                {
+                    "name": "jsonItems",
+                    "description": "The json items object where the keys are the name of the property on the parent and the value\n       is an object with keys of \"titleSafe\", \"minScale\", \"maxScale\", \"centerHorizontally\", \"align\"",
+                    "type": "Object"
+                },
+                {
+                    "name": "immediateDestroy",
+                    "description": "If we should immediately cleanup the UIScaler after scaling items",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "true"
+                }
+            ],
+            "return": {
+                "description": "The scaler object that can be reused",
+                "type": "UIScaler"
+            },
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 182,
+            "description": "Set the current screen settings. If the stage size changes at all, re-call this function",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "params": [
+                {
+                    "name": "screenWidth",
+                    "description": "The fullscreen width",
+                    "type": "Number"
+                },
+                {
+                    "name": "screenHeight",
+                    "description": "The fullscreen height",
+                    "type": "Number"
+                },
+                {
+                    "name": "screenPPI",
+                    "description": "The screen resolution density",
+                    "type": "Number"
+                }
+            ],
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 198,
+            "description": "Get the current scale of the screen",
+            "itemtype": "method",
+            "name": "getScale",
+            "return": {
+                "description": "The current stage scale",
+                "type": "Number"
+            },
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 208,
+            "description": "Manually add an item",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "item",
+                    "description": "The display object item to add",
+                    "type": "createjs.DisplayObject|PIXI.DisplayObject"
+                },
+                {
+                    "name": "vertAlign",
+                    "description": "The vertical align of the item (cefault is center)",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "\"center\""
+                },
+                {
+                    "name": "horiAlign",
+                    "description": "The horizontal align of the item (default is center)",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "\"center\""
+                },
+                {
+                    "name": "titleSafe",
+                    "description": "If the item needs to be in the title safe area (default is false)",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                },
+                {
+                    "name": "minScale",
+                    "description": "The minimum scale amount (default, scales the same size as the stage)",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "1"
+                },
+                {
+                    "name": "maxScale",
+                    "description": "The maximum scale amount (default, scales the same size as the stage)",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "1"
+                },
+                {
+                    "name": "centeredHorizontally",
+                    "description": "Makes sure that the center of the object was at the center of the screen, assuming an origin at the top left of the object",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                }
+            ],
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 234,
+            "description": "Scale a single background image according to the UIScaler.width and height",
+            "itemtype": "method",
+            "name": "resizeBackground",
+            "static": 1,
+            "params": [
+                {
+                    "name": "The",
+                    "description": "bitmap to scale",
+                    "type": "createjs.Bitmap|PIXI.Bitmap"
+                }
+            ],
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 256,
+            "description": "Convenience function to scale a collection of backgrounds",
+            "itemtype": "method",
+            "name": "resizeBackgrounds",
+            "static": 1,
+            "params": [
+                {
+                    "name": "bitmaps",
+                    "description": "The collection of bitmap images",
+                    "type": "Array"
+                }
+            ],
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 270,
+            "description": "Scale the UI items that have been registered to the current screen",
+            "itemtype": "method",
+            "name": "resize",
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/scaling/UIScaler.js",
+            "line": 285,
+            "description": "Destroy the scaler object",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "UIScaler",
+            "module": "cloudkid"
+        },
         {
             "file": "src/Animator.js",
             "line": 21,

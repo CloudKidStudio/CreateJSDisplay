@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.ico">
     <script src="http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
-	<title>CreateJSDisplay v0.0.1 API Documentation : CharacterClip</title>  
+	<title>CreateJSDisplay v0.0.1 API Documentation : Positioner</title>  
 </head>
 <body class="yui3-skin-sam">
 
@@ -110,7 +110,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>CharacterClip Class</h1>
+                        <h1>Positioner Class</h1>
 <div class="box meta">
     
 
@@ -118,7 +118,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/src_CharacterClip.js.html#l8"><code>CharacterClip:8</code></a>
+            Defined in: <a href="../files/src_scaling_Positioner.js.html#l5"><code>Positioner:5</code></a>
         </div>
     
 
@@ -134,123 +134,10 @@
 
 
 <div class="box intro">
-    <p>CharacterClip is used by the CharacterController class</p>
+    <p>Initially layouts all interface elements</p>
 
 </div>
 
-
-    <div class="constructor">
-        <h2>Constructor</h2>
-        <div id="method_CharacterClip" class="method item">
-    <h3 class="name"><code>CharacterClip</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>event</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>loops</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_CharacterClip.js.html#l8"><code>CharacterClip:8</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">event</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>Animator event to play</p>
-
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">loops</code>
-                        <span class="type">Int</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>The number of loops</p>
-
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-    </div>
 
 
 <div id="classdocs" class="tabview">
@@ -260,8 +147,6 @@
         
             <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
         
-        
-            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
         
         
         
@@ -278,8 +163,19 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
-                                <a href="#method_initialize">initialize</a>
+                                <a href="#method_generateHitArea">generateHitArea</a>
 
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_positionItems">positionItems</a>
+
+                                
+                                    <span class="flag static">static</span>
                                 
                                 
                             </li>
@@ -288,28 +184,6 @@
                 </div>
             
 
-            
-                <div class="index-section properties">
-                    <h3>Properties</h3>
-
-                    <ul class="index-list properties">
-                        
-                            <li class="index-item property">
-                                <a href="#property_event">event</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_loops">loops</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
             
 
             
@@ -322,8 +196,8 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method_initialize" class="method item">
-    <h3 class="name"><code>initialize</code></h3>
+                    <div id="method_generateHitArea" class="method item">
+    <h3 class="name"><code>generateHitArea</code></h3>
 
     
         <div class="args">
@@ -331,13 +205,13 @@
             
                 <li class="arg">
                     
-                        <code>event</code>
+                        <code>hitArea</code>
                     
                 </li>
             
                 <li class="arg">
                     
-                        <code>loops</code>
+                        <code>scale=1</code>
                     
                 </li>
             
@@ -346,13 +220,19 @@
     
 
     
-
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+        </span>
     
 
     
 
     
 
+    
+
+    
+        <span class="flag static">static</span>
     
 
     
@@ -370,7 +250,7 @@
             
         
         
-        <a href="../files/src_CharacterClip.js.html#l37"><code>initialize:37</code></a>
+        <a href="../files/src_scaling_Positioner.js.html#l59"><code>generateHitArea:59</code></a>
         
         </p>
 
@@ -381,7 +261,7 @@
     </div>
 
     <div class="description">
-        <p>Initialiaze this character clip</p>
+        <p>Create the polygon hit area for interface elements</p>
 
     </div>
 
@@ -393,14 +273,28 @@
             
                 <li class="param">
                     
-                        <code class="param-name">event</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                        <code class="param-name">hitArea</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>The frame label to play using Animator.play</p>
+                        <p>One of the following: <br/></p>
+<ul>
+<li><p>An array of points for a polygon, e.g. </p>
+<pre><code>  [{x:0, y:0}, {x:0, y:20}, {x:20, y:0}]</code></pre>
+</li>
+<li><p>An object describing a rectangle, e.g.</p>
+<pre><code>  {type:"rect", x:0, y:0, w:10, h:30}</code></pre>
+</li>
+<li><p>An object describing an ellipse, where x and y are the center, e.g. </p>
+<pre><code>  {type:"ellipse", x:0, y:0, w:10, h:30}</code></pre>
+</li>
+<li><p>An object describing a circle, where x and y are the center, e.g.</p>
+<pre><code>  {type:"circle", x:0, y:0, r:20}</code></pre>
+</li>
+</ul>
 
                     </div>
 
@@ -409,14 +303,141 @@
             
                 <li class="param">
                     
-                        <code class="param-name">loops</code>
-                        <span class="type">Int</span>
+                        <code class="param-name">scale=1</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>The number of times to loop, default of 0 plays continuously</p>
+                        <p>The size to scale hitArea by</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                    
+                    <p>A geometric shape object for hit testing, either a Polygon, Rectangle, Ellipse, or Circle,
+    depending on the hitArea object. The shape will have a contains() function for hit testing.</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_positionItems" class="method item">
+    <h3 class="name"><code>positionItems</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>parent</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>itemSettings</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_scaling_Positioner.js.html#l15"><code>positionItems:15</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Initial position of all layout items</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">parent</code>
+                        <span class="type">createjs.DisplayObject</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">itemSettings</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>JSON format with position information</p>
 
                     </div>
 
@@ -436,102 +457,6 @@
             </div>
         
 
-        
-            <div id="properties" class="api-class-tabpanel">
-                <h2 class="off-left">Properties</h2>
-
-                
-                    <div id="property_event" class="property item">
-    <h3 class="name"><code>event</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_CharacterClip.js.html#l23"><code>event:23</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The event to play</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_loops" class="property item">
-    <h3 class="name"><code>loops</code></h3>
-    <span class="type">Int</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_CharacterClip.js.html#l30"><code>loops:30</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The number of times to loop</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-            </div>
         
 
         

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.ico">
     <script src="http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
-	<title>CreateJSDisplay v0.0.1 API Documentation : CreateJSDisplay</title>  
+	<title>CreateJSDisplay v0.0.1 API Documentation : UIElement</title>  
 </head>
 <body class="yui3-skin-sam">
 
@@ -110,7 +110,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>CreateJSDisplay Class</h1>
+                        <h1>UIElement Class</h1>
 <div class="box meta">
     
 
@@ -118,7 +118,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/src_CreateJSDisplay.js.html#l8"><code>CreateJSDisplay:8</code></a>
+            Defined in: <a href="../files/src_scaling_UIElement.js.html#l8"><code>UIElement:8</code></a>
         </div>
     
 
@@ -134,8 +134,7 @@
 
 
 <div class="box intro">
-    <p>CreateJSDisplay is a display plugin for the CloudKid Framework 
-    that uses the EaselJS library for rendering.</p>
+    <p>A single UI item that needs to be resized</p>
 
 </div>
 
@@ -173,13 +172,6 @@
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_render">render</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
                                 <a href="#method_resize">resize</a>
 
                                 
@@ -197,77 +189,63 @@
                     <ul class="index-list properties">
                         
                             <li class="index-item property private">
-                                <a href="#property__enabled">_enabled</a>
+                                <a href="#property__designedScreen">_designedScreen</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property private">
-                                <a href="#property__visible">_visible</a>
+                                <a href="#property__item">_item</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property public">
-                                <a href="#property_canvas">canvas</a>
+                            <li class="index-item property private">
+                                <a href="#property__settings">_settings</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property public">
-                                <a href="#property_enabled">enabled</a>
+                            <li class="index-item property">
+                                <a href="#property_origBounds">origBounds</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property public">
-                                <a href="#property_height">height</a>
+                            <li class="index-item property">
+                                <a href="#property_origMarginHori">origMarginHori</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property public">
-                                <a href="#property_id">id</a>
+                            <li class="index-item property">
+                                <a href="#property_origMarginVert">origMarginVert</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property public">
-                                <a href="#property_mouseOverRate">mouseOverRate</a>
+                            <li class="index-item property">
+                                <a href="#property_origScaleX">origScaleX</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property public">
-                                <a href="#property_paused">paused</a>
+                            <li class="index-item property">
+                                <a href="#property_origScaleY">origScaleY</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property public">
-                                <a href="#property_"></a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property public">
-                                <a href="#property_visible">visible</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property public">
-                                <a href="#property_width">width</a>
+                            <li class="index-item property">
+                                <a href="#property_origWidth">origWidth</a>
 
                                 
                                 
@@ -319,7 +297,7 @@
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l175"><code>destroy:175</code></a>
+        <a href="../files/src_scaling_UIElement.js.html#l238"><code>destroy:238</code></a>
         
         </p>
 
@@ -330,101 +308,10 @@
     </div>
 
     <div class="description">
-        <p>Destroy and don&#39;t use after this, this method is called by the Application and should 
-not be called directly, use Application.removeDisplay(id). 
-The stage recursively removes all display objects here.</p>
+        <p>Destroy this item, don&#39;t use after this</p>
 
     </div>
 
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_render" class="method item">
-    <h3 class="name"><code>render</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>elapsed</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_CreateJSDisplay.js.html#l161"><code>render:161</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Updates the stage and draws it. Elapsed is a parameter because CreateJS needs it, PixiJS doesn&#39;t care.
-this is only called by the Application. This method does nothing if paused is true.</p>
-
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">elapsed</code>
-                        <span class="type">Int</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
     
 
     
@@ -442,13 +329,7 @@ this is only called by the Application. This method does nothing if paused is tr
             
                 <li class="arg">
                     
-                        <code>width</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>height</code>
+                        <code>newScreen</code>
                     
                 </li>
             
@@ -481,7 +362,7 @@ this is only called by the Application. This method does nothing if paused is tr
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l147"><code>resize:147</code></a>
+        <a href="../files/src_scaling_UIElement.js.html#l138"><code>resize:138</code></a>
         
         </p>
 
@@ -492,8 +373,7 @@ this is only called by the Application. This method does nothing if paused is tr
     </div>
 
     <div class="description">
-        <p>Resizes the canvas, and tells the rendering library if it needs to know (PixiJS does)
-this is only called by the Application</p>
+        <p>Adjust the item scale and position, to reflect new screen</p>
 
     </div>
 
@@ -505,30 +385,14 @@ this is only called by the Application</p>
             
                 <li class="param">
                     
-                        <code class="param-name">width</code>
-                        <span class="type">Int</span>
+                        <code class="param-name">newScreen</code>
+                        <span class="type"><a href="../classes/ScreenSettings.html" class="crosslink">ScreenSettings</a></span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>The width that the display should be</p>
-
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">height</code>
-                        <span class="type">Int</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>The height that the display should be</p>
+                        <p>The current screen settings</p>
 
                     </div>
 
@@ -553,9 +417,9 @@ this is only called by the Application</p>
                 <h2 class="off-left">Properties</h2>
 
                 
-                    <div id="property__enabled" class="property item private">
-    <h3 class="name"><code>_enabled</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    <div id="property__designedScreen" class="property item private">
+    <h3 class="name"><code>_designedScreen</code></h3>
+    <span class="type"><a href="../classes/ScreenSettings.html" class="crosslink">ScreenSettings</a></span>
 
     
 
@@ -578,7 +442,7 @@ this is only called by the Application</p>
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l94"><code>_enabled:94</code></a>
+        <a href="../files/src_scaling_UIElement.js.html#l131"><code>_designedScreen:131</code></a>
         
         </p>
 
@@ -588,7 +452,7 @@ this is only called by the Application</p>
     </div>
 
     <div class="description">
-        <p>If input is enabled on the stage.</p>
+        <p>The original screen the item was designed for</p>
 
     </div>
 
@@ -600,9 +464,9 @@ this is only called by the Application</p>
 </div>
 
                 
-                    <div id="property__visible" class="property item private">
-    <h3 class="name"><code>_visible</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    <div id="property__item" class="property item private">
+    <h3 class="name"><code>_item</code></h3>
+    <span class="type">createjs.DisplayObject | PIXI.DisplayObject</span>
 
     
 
@@ -625,7 +489,7 @@ this is only called by the Application</p>
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l126"><code>_visible:126</code></a>
+        <a href="../files/src_scaling_UIElement.js.html#l124"><code>_item:124</code></a>
         
         </p>
 
@@ -635,7 +499,7 @@ this is only called by the Application</p>
     </div>
 
     <div class="description">
-        <p>If the display is visible.</p>
+        <p>The reference to the interface item we&#39;re scaling</p>
 
     </div>
 
@@ -647,14 +511,14 @@ this is only called by the Application</p>
 </div>
 
                 
-                    <div id="property_canvas" class="property item public">
-    <h3 class="name"><code>canvas</code></h3>
-    <span class="type">DOMElement</span>
+                    <div id="property__settings" class="property item private">
+    <h3 class="name"><code>_settings</code></h3>
+    <span class="type"><a href="../classes/UIElementSettings.html" class="crosslink">UIElementSettings</a></span>
 
     
 
     
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
     
 
     
@@ -672,7 +536,7 @@ this is only called by the Application</p>
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l37"><code>canvas:37</code></a>
+        <a href="../files/src_scaling_UIElement.js.html#l117"><code>_settings:117</code></a>
         
         </p>
 
@@ -682,7 +546,7 @@ this is only called by the Application</p>
     </div>
 
     <div class="description">
-        <p>the canvas managed by this display</p>
+        <p>The reference to the scale settings</p>
 
     </div>
 
@@ -694,14 +558,12 @@ this is only called by the Application</p>
 </div>
 
                 
-                    <div id="property_enabled" class="property item public">
-    <h3 class="name"><code>enabled</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    <div id="property_origBounds" class="property item">
+    <h3 class="name"><code>origBounds</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
 
     
 
-    
-        <span class="flag public">public</span>
     
 
     
@@ -719,7 +581,7 @@ this is only called by the Application</p>
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l101"><code>enabled:101</code></a>
+        <a href="../files/src_scaling_UIElement.js.html#l110"><code>origBounds:110</code></a>
         
         </p>
 
@@ -729,7 +591,8 @@ this is only called by the Application</p>
     </div>
 
     <div class="description">
-        <p>If input is enabled on the stage for this display. The default is true.</p>
+        <p>The original bounds of the item with x, y, right, bottom, width, height properties.
+Used to determine the distance to each edge of the item from its origin</p>
 
     </div>
 
@@ -741,14 +604,12 @@ this is only called by the Application</p>
 </div>
 
                 
-                    <div id="property_height" class="property item public">
-    <h3 class="name"><code>height</code></h3>
-    <span class="type">Int</span>
+                    <div id="property_origMarginHori" class="property item">
+    <h3 class="name"><code>origMarginHori</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
 
     
 
-    
-        <span class="flag public">public</span>
     
 
     
@@ -766,7 +627,7 @@ this is only called by the Application</p>
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l62"><code>height:62</code></a>
+        <a href="../files/src_scaling_UIElement.js.html#l75"><code>origMarginHori:75</code></a>
         
         </p>
 
@@ -776,11 +637,12 @@ this is only called by the Application</p>
     </div>
 
     <div class="description">
-        <p>Convenience method for getting the height of the canvas element
-would be the same thing as canvas.height</p>
+        <p>Original horizontal margin in pixels</p>
 
     </div>
 
+    
+        <p><strong>Default:</strong> 0</p>
     
 
     
@@ -789,14 +651,12 @@ would be the same thing as canvas.height</p>
 </div>
 
                 
-                    <div id="property_id" class="property item public">
-    <h3 class="name"><code>id</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    <div id="property_origMarginVert" class="property item">
+    <h3 class="name"><code>origMarginVert</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
 
     
 
-    
-        <span class="flag public">public</span>
     
 
     
@@ -814,7 +674,7 @@ would be the same thing as canvas.height</p>
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l45"><code>id:45</code></a>
+        <a href="../files/src_scaling_UIElement.js.html#l82"><code>origMarginVert:82</code></a>
         
         </p>
 
@@ -824,10 +684,12 @@ would be the same thing as canvas.height</p>
     </div>
 
     <div class="description">
-        <p>The DOM id for the canvas</p>
+        <p>Original vertical margin in pixels</p>
 
     </div>
 
+    
+        <p><strong>Default:</strong> 0</p>
     
 
     
@@ -836,14 +698,12 @@ would be the same thing as canvas.height</p>
 </div>
 
                 
-                    <div id="property_mouseOverRate" class="property item public">
-    <h3 class="name"><code>mouseOverRate</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    <div id="property_origScaleX" class="property item">
+    <h3 class="name"><code>origScaleX</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
 
     
 
-    
-        <span class="flag public">public</span>
     
 
     
@@ -861,7 +721,7 @@ would be the same thing as canvas.height</p>
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l87"><code>mouseOverRate:87</code></a>
+        <a href="../files/src_scaling_UIElement.js.html#l96"><code>origScaleX:96</code></a>
         
         </p>
 
@@ -871,10 +731,12 @@ would be the same thing as canvas.height</p>
     </div>
 
     <div class="description">
-        <p>The rate at which EaselJS calculates mouseover events, in times/second.</p>
+        <p>Original X scale of the item</p>
 
     </div>
 
+    
+        <p><strong>Default:</strong> 0</p>
     
 
     
@@ -883,14 +745,12 @@ would be the same thing as canvas.height</p>
 </div>
 
                 
-                    <div id="property_paused" class="property item public">
-    <h3 class="name"><code>paused</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    <div id="property_origScaleY" class="property item">
+    <h3 class="name"><code>origScaleY</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
 
     
 
-    
-        <span class="flag public">public</span>
     
 
     
@@ -908,7 +768,7 @@ would be the same thing as canvas.height</p>
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l79"><code>paused:79</code></a>
+        <a href="../files/src_scaling_UIElement.js.html#l103"><code>origScaleY:103</code></a>
         
         </p>
 
@@ -918,11 +778,12 @@ would be the same thing as canvas.height</p>
     </div>
 
     <div class="description">
-        <p>If rendering is paused on this display only. Pausing all displays can be done
-using Application.paused setter.</p>
+        <p>The original Y scale of the item</p>
 
     </div>
 
+    
+        <p><strong>Default:</strong> 0</p>
     
 
     
@@ -931,14 +792,12 @@ using Application.paused setter.</p>
 </div>
 
                 
-                    <div id="property_" class="property item public">
-    <h3 class="name"><code></code></h3>
-    <span class="type">createjs.Stage | createjs.SpriteStage</span>
+                    <div id="property_origWidth" class="property item">
+    <h3 class="name"><code>origWidth</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
 
     
 
-    
-        <span class="flag public">public</span>
     
 
     
@@ -956,7 +815,7 @@ using Application.paused setter.</p>
             
         
         
-        <a href="../files/src_CreateJSDisplay.js.html#l71"><code>:71</code></a>
+        <a href="../files/src_scaling_UIElement.js.html#l89"><code>origWidth:89</code></a>
         
         </p>
 
@@ -966,105 +825,12 @@ using Application.paused setter.</p>
     </div>
 
     <div class="description">
-        <p>The rendering library&#39;s stage element, the root display object</p>
+        <p>Original width in pixels</p>
 
     </div>
 
     
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_visible" class="property item public">
-    <h3 class="name"><code>visible</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-
-    
-
-    
-        <span class="flag public">public</span>
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_CreateJSDisplay.js.html#l133"><code>visible:133</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>If the display is visible, using "display: none" css on the canvas. Invisible displays won&#39;t render.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_width" class="property item public">
-    <h3 class="name"><code>width</code></h3>
-    <span class="type">Int</span>
-
-    
-
-    
-        <span class="flag public">public</span>
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_CreateJSDisplay.js.html#l53"><code>width:53</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Convenience method for getting the width of the canvas element
-would be the same thing as canvas.width</p>
-
-    </div>
-
+        <p><strong>Default:</strong> 0</p>
     
 
     

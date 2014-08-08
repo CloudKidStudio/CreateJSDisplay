@@ -10,8 +10,13 @@ YUI.add("yuidoc-meta", function(Y) {
         "CharacterController",
         "CreateJSDisplay",
         "DragManager",
+        "Positioner",
+        "ScreenSettings",
         "Texture",
-        "TextureAtlas"
+        "TextureAtlas",
+        "UIElement",
+        "UIElementSettings",
+        "UIScaler"
     ],
     "modules": [
         "cloudkid"
@@ -19,7 +24,8 @@ YUI.add("yuidoc-meta", function(Y) {
     "allModules": [
         {
             "displayName": "cloudkid",
-            "name": "cloudkid"
+            "name": "cloudkid",
+            "description": "Initially layouts all interface elements"
         }
     ]
 } };

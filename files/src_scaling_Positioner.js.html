@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.ico">
     <script src="http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
-	<title>CreateJSDisplay v0.0.1 API Documentation : src/CreateJSDisplay.js</title>  
+	<title>CreateJSDisplay v0.0.1 API Documentation : src/scaling/Positioner.js</title>  
 </head>
 <body class="yui3-skin-sam">
 
@@ -111,204 +111,128 @@
                 <div id="docs-main">
                     <div class="content">
                         <script>
-	var name = src/CreateJSDisplay.js      
+	var name = src/scaling/Positioner.js      
 </script>
-<h1 class="file-heading">File:CreateJSDisplay.js</h1>
+<h1 class="file-heading">File:Positioner.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
-/**
-*  @module cloudkid
-*/
-(function(undefined){
-
+(function() {
+	
 	&quot;use strict&quot;;
-
+	
 	/**
-	*   CreateJSDisplay is a display plugin for the CloudKid Framework 
-	*	that uses the EaselJS library for rendering.
-	*
-	*   @class CreateJSDisplay
+	*  Initially layouts all interface elements
+	*  @module cloudkid
+	*  @class Positioner
 	*/
-	var CreateJSDisplay = function(id, options)
+	var Positioner = function(){};
+	
+	// Set the protype
+	Positioner.prototype = {};
+	
+	/**
+	*  Initial position of all layout items
+	*  @method positionItems
+	*  @static
+	*  @param {createjs.DisplayObject} parent
+	*  @param {Object} itemSettings JSON format with position information
+	*/
+	Positioner.positionItems = function(parent, itemSettings)
 	{
-		this.id = id;
-		this.canvas = document.getElementById(id);
-		this.width = this.canvas.width;
-		this.height = this.canvas.height;
-		this._visible = this.canvas.style.display != &quot;none&quot;;
-		if(options.mouseOverRate !== undefined)
-			this.mouseOverRate = options.mouseOverRate;
-		//make stage
-		if(options.stageType == &quot;spriteStage&quot;)
+		var rot, pt;
+		for(var iName in itemSettings)
 		{
-			//TODO: make a sprite stage (not officially released yet)
-		}
-		else
-		{
-			this.stage = new createjs.Stage(id);
-		}
-		this.enabled = true;//enable mouse/touch input
-	};
-
-	var p = CreateJSDisplay.prototype = {};
-
-	/**
-	*  the canvas managed by this display
-	*  @property {DOMElement} canvas
-	*  @readOnly
-	*  @public
-	*/
-	p.canvas = null;
-
-	/**
-	*  The DOM id for the canvas
-	*  @property {String} id
-	*  @readOnly
-	*  @public
-	*/
-	p.id = null;
-
-	/**
-	*  Convenience method for getting the width of the canvas element
-	*  would be the same thing as canvas.width
-	*  @property {int} width
-	*  @readOnly
-	*  @public
-	*/
-	p.width = 0;
-
-	/**
-	*  Convenience method for getting the height of the canvas element
-	*  would be the same thing as canvas.height
-	*  @property {int} height
-	*  @readOnly
-	*  @public
-	*/
-	p.height = 0;
-
-	/**
-	*  The rendering library&#x27;s stage element, the root display object
-	*  @property {createjs.Stage|createjs.SpriteStage}
-	*  @readOnly
-	*  @public
-	*/
-	p.stage = null;
-
-	/**
-	*  If rendering is paused on this display only. Pausing all displays can be done
-	*  using Application.paused setter.
-	*  @property {Boolean} paused
-	*  @public
-	*/
-	p.paused = false;
-
-	/**
-	*  The rate at which EaselJS calculates mouseover events, in times/second.
-	*  @property {Boolean} mouseOverRate
-	*  @public
-	*/
-	p.mouseOverRate = 30;
-
-	/**
-	*  If input is enabled on the stage.
-	*  @property {Boolean} _enabled
-	*  @private
-	*/
-	p._enabled = false;
-
-	/**
-	*  If input is enabled on the stage for this display. The default is true.
-	*  @property {Boolean} enabled
-	*  @public
-	*/
-	Object.defineProperty(p, &quot;enabled&quot;, {
-		get: function(){ return this._enabled; },
-		set: function(value)
-		{
-			this._enabled = value;
-			if(value)
+			var item = parent[iName];
+			if(!item)
 			{
-				this.stage.enableMouseOver(this.mouseOverRate);
-				this.stage.enableDOMEvents(true);
-				createjs.Touch.enable(this.stage);
+				Debug.error(&quot;could not find object &#x27;&quot; +  iName + &quot;&#x27;&quot;);
+				continue;
 			}
+			var setting = itemSettings[iName];
+			item.x = setting.x;
+			item.y = setting.y;
+			pt = setting.scale;
+			if(pt)
+			{
+				item.scaleX *= pt.x;
+				item.scaleY *= pt.y;
+			}
+			pt = setting.pivot;
+			if(pt)
+			{
+				item.regX = pt.x;
+				item.regY = pt.y;
+			}
+			rot = setting.rotation;
+			if(rot)
+				item.rotation = rot;
+			//item.name = iName;
+			if(setting.hitArea)
+			{
+				item.hitShape = Positioner.generateHitArea(setting.hitArea);
+			}
+		}
+	};
+	
+	/**
+	*  Create the polygon hit area for interface elements
+	*  @static
+	*  @method generateHitArea
+	*  @param {Object|Array} hitArea One of the following: &lt;br/&gt;
+	*  * An array of points for a polygon, e.g. 
+	*
+	*		[{x:0, y:0}, {x:0, y:20}, {x:20, y:0}]
+	*
+	*  * An object describing a rectangle, e.g.
+	*
+	*		{type:&quot;rect&quot;, x:0, y:0, w:10, h:30}
+	*
+	*  * An object describing an ellipse, where x and y are the center, e.g. 
+	*
+	*		{type:&quot;ellipse&quot;, x:0, y:0, w:10, h:30}
+	*
+	*  * An object describing a circle, where x and y are the center, e.g.
+	*
+	*		{type:&quot;circle&quot;, x:0, y:0, r:20}
+	*  @param {Number} scale=1 The size to scale hitArea by
+	*  @return {Object} A geometric shape object for hit testing, either a Polygon, Rectangle, Ellipse, or Circle,
+	*      depending on the hitArea object. The shape will have a contains() function for hit testing.
+	*/
+	Positioner.generateHitArea = function(hitArea, scale)
+	{
+		if(!scale)
+			scale = 1;
+		if(isArray(hitArea))
+		{
+			if(scale == 1)
+				return new createjs.Polygon(hitArea);
 			else
 			{
-				this.stage.enableMouseOver(false);
-				this.stage.enableDOMEvents(false);
-				createjs.Touch.disable(this.stage);
+				var temp = [];
+				for(var i = 0, len = hitArea.length; i &lt; len; ++i)
+				{
+					temp.push(new createjs.Point(hitArea[i].x * scale, hitArea[i].y * scale));
+				}
+				return new createjs.Polygon(temp);
 			}
 		}
-	});
-
-	/**
-	*  If the display is visible.
-	*  @property {Boolean} _visible
-	*  @private
-	*/
-	p._visible = false;
-
-	/**
-	*  If the display is visible, using &quot;display: none&quot; css on the canvas. Invisible displays won&#x27;t render.
-	*  @property {Boolean} visible
-	*  @public
-	*/
-	Object.defineProperty(p, &quot;visible&quot;, {
-		get: function(){ return this._visible; },
-		set: function(value)
-		{
-			this._visible = value;
-			this.canvas.style.display = value ? &quot;block&quot; : &quot;none&quot;;
-		}
-	});
-
-	/**
-	* Resizes the canvas, and tells the rendering library if it needs to know (PixiJS does)
-	* this is only called by the Application
-	* @method resize
-	* @internal
-	* @param {int} width The width that the display should be
-	* @param {int} height The height that the display should be
-	*/
-	p.resize = function(width, height)
-	{
-		this.canvas.width = width;
-		this.canvas.height = height;
+		else if(hitArea.type == &quot;rect&quot; || !hitArea.type)
+			return new createjs.Rectangle(hitArea.x * scale, hitArea.y * scale, hitArea.w * scale, hitArea.h * scale);
+		else if(hitArea.type == &quot;ellipse&quot;)
+			return new createjs.Ellipse((hitArea.x - hitArea.w * 0.5) * scale, (hitArea.y - hitArea.h * 0.5) * scale, hitArea.w * scale, hitArea.h * scale);//convert center to upper left corner
+		else if(hitArea.type == &quot;circle&quot;)
+			return new createjs.Circle(hitArea.x * scale, hitArea.y * scale, hitArea.r * scale);//x &amp; y are center, pixi documentation lies
+		return null;
 	};
 
-	/** 
-	* Updates the stage and draws it. Elapsed is a parameter because CreateJS needs it, PixiJS doesn&#x27;t care.
-	* this is only called by the Application. This method does nothing if paused is true.
-	* @method render
-	* @internal
-	* @param {int} elapsed
-	*/
-	p.render = function(elapsed)
+	var isArray = function(o)
 	{
-		if(this.paused || !this._visible) return;
-
-		this.stage.update(elapsed);
+		return Object.prototype.toString.call(o) === &#x27;[object Array]&#x27;;
 	};
-
-	/**
-	*  Destroy and don&#x27;t use after this, this method is called by the Application and should 
-	*  not be called directly, use Application.removeDisplay(id). 
-	*  The stage recursively removes all display objects here.
-	*  @method destroy
-	*  @internal
-	*/
-	p.destroy = function()
-	{
-		this.enabled = false;
-		this.stage.removeAllChildren(true);
-		this.stage = this.canvas = null;
-	};
-
-	// Assign to the global namespace
-	namespace(&#x27;cloudkid&#x27;).CreateJSDisplay = CreateJSDisplay;
-	namespace(&#x27;cloudkid.createjs&#x27;).CreateJSDisplay = CreateJSDisplay;
-
+	
+	namespace(&#x27;cloudkid&#x27;).Positioner = Positioner;
+	namespace(&#x27;cloudkid.createjs&#x27;).Positioner = Positioner;
 }());
     </pre>
 </div>

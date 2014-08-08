@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.ico">
     <script src="http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
-	<title>CreateJSDisplay v0.0.1 API Documentation : Texture</title>  
+	<title>CreateJSDisplay v0.0.1 API Documentation : UIElementSettings</title>  
 </head>
 <body class="yui3-skin-sam">
 
@@ -110,7 +110,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Texture Class</h1>
+                        <h1>UIElementSettings Class</h1>
 <div class="box meta">
     
 
@@ -118,7 +118,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/src_TextureAtlas.js.html#l145"><code>Texture:145</code></a>
+            Defined in: <a href="../files/src_scaling_UIElementSettings.js.html#l5"><code>UIElementSettings:5</code></a>
         </div>
     
 
@@ -134,8 +134,7 @@
 
 
 <div class="box intro">
-    <p>A Texture - a specific portion of an image that can then be drawn by a Bitmap.
-This class is hidden within TextureAtlas, and can&#39;t be manually created.</p>
+    <p>The UI Item Settings which is the positioning settings used to adjust each element</p>
 
 </div>
 
@@ -166,42 +165,42 @@ This class is hidden within TextureAtlas, and can&#39;t be manually created.</p>
                     <ul class="index-list properties">
                         
                             <li class="index-item property">
-                                <a href="#property_frame">frame</a>
+                                <a href="#property_centeredHorizontally">centeredHorizontally</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_height">height</a>
+                                <a href="#property_horiAlign">horiAlign</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_image">image</a>
+                                <a href="#property_maxScale">maxScale</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_offset">offset</a>
+                                <a href="#property_minScale">minScale</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_trimmed">trimmed</a>
+                                <a href="#property_titleSafe">titleSafe</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_width">width</a>
+                                <a href="#property_vertAlign">vertAlign</a>
 
                                 
                                 
@@ -223,188 +222,8 @@ This class is hidden within TextureAtlas, and can&#39;t be manually created.</p>
                 <h2 class="off-left">Properties</h2>
 
                 
-                    <div id="property_frame" class="property item">
-    <h3 class="name"><code>frame</code></h3>
-    <span class="type">createjs.Rectangle</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_TextureAtlas.js.html#l158"><code>frame:158</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The frame rectangle within the image.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_height" class="property item">
-    <h3 class="name"><code>height</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_TextureAtlas.js.html#l178"><code>height:178</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The height of the untrimmed texture.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_image" class="property item">
-    <h3 class="name"><code>image</code></h3>
-    <span class="type">Image | HTMLCanvasElement</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_TextureAtlas.js.html#l152"><code>image:152</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The image element that this texture references.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_offset" class="property item">
-    <h3 class="name"><code>offset</code></h3>
-    <span class="type">createjs.Point</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_TextureAtlas.js.html#l168"><code>offset:168</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The offset that the trimmed sprite should be placed at to restore it to the untrimmed position.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_trimmed" class="property item">
-    <h3 class="name"><code>trimmed</code></h3>
+                    <div id="property_centeredHorizontally" class="property item">
+    <h3 class="name"><code>centeredHorizontally</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
 
     
@@ -426,7 +245,7 @@ This class is hidden within TextureAtlas, and can&#39;t be manually created.</p>
             
         
         
-        <a href="../files/src_TextureAtlas.js.html#l163"><code>trimmed:163</code></a>
+        <a href="../files/src_scaling_UIElementSettings.js.html#l48"><code>centeredHorizontally:48</code></a>
         
         </p>
 
@@ -436,7 +255,54 @@ This class is hidden within TextureAtlas, and can&#39;t be manually created.</p>
     </div>
 
     <div class="description">
-        <p>If this texture has been trimmed.</p>
+        <p>If the UI element is centered horizontally</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> false</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_horiAlign" class="property item">
+    <h3 class="name"><code>horiAlign</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_scaling_UIElementSettings.js.html#l21"><code>horiAlign:21</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>What horizontal screen location the item should be aligned to: "left", "center", "right"</p>
 
     </div>
 
@@ -448,8 +314,8 @@ This class is hidden within TextureAtlas, and can&#39;t be manually created.</p>
 </div>
 
                 
-                    <div id="property_width" class="property item">
-    <h3 class="name"><code>width</code></h3>
+                    <div id="property_maxScale" class="property item">
+    <h3 class="name"><code>maxScale</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
 
     
@@ -471,7 +337,7 @@ This class is hidden within TextureAtlas, and can&#39;t be manually created.</p>
             
         
         
-        <a href="../files/src_TextureAtlas.js.html#l173"><code>width:173</code></a>
+        <a href="../files/src_scaling_UIElementSettings.js.html#l34"><code>maxScale:34</code></a>
         
         </p>
 
@@ -481,7 +347,148 @@ This class is hidden within TextureAtlas, and can&#39;t be manually created.</p>
     </div>
 
     <div class="description">
-        <p>The width of the untrimmed texture.</p>
+        <p>Maximum scale allowed in physical size</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 1</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_minScale" class="property item">
+    <h3 class="name"><code>minScale</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_scaling_UIElementSettings.js.html#l41"><code>minScale:41</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Minimum scale allowed in physical size</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 1</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_titleSafe" class="property item">
+    <h3 class="name"><code>titleSafe</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_scaling_UIElementSettings.js.html#l27"><code>titleSafe:27</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>If this element should be aligned to the title safe area, not the actual screen</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> false</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_vertAlign" class="property item">
+    <h3 class="name"><code>vertAlign</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_scaling_UIElementSettings.js.html#l15"><code>vertAlign:15</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>What vertical screen location the item should be aligned to: "top", "center", "bottom"</p>
 
     </div>
 

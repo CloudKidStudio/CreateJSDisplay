@@ -10,10 +10,17 @@
 	*	that uses the EaselJS library for rendering.
 	*
 	*   @class CreateJSDisplay
+	*	@constructor
+	*	@param {String} id The id of the canvas element on the page to draw to.
+	*	@param {Object} options The setup data for the CreateJS stage.
+	*	@param {String} [options.stageType="stage"] If the stage should be a normal stage or a SpriteStage (use "spriteStage").
+	*	@param {Boolean} [options.clearView=false] If the stage should wipe the canvas between renders.
+	*	@param {int} [options.mouseOverRate=30] How many times per second to check for mouseovers. To disable them, use 0 or -1.
 	*/
 	var CreateJSDisplay = function(id, options)
 	{
 		this.id = id;
+		options = options || {};
 		this.canvas = document.getElementById(id);
 		this.width = this.canvas.width;
 		this.height = this.canvas.height;
@@ -29,6 +36,7 @@
 		{
 			this.stage = new createjs.Stage(id);
 		}
+		this.stage.autoClear = !!this.options.clearView;
 		this.enabled = true;//enable mouse/touch input
 	};
 
@@ -86,8 +94,9 @@
 
 	/**
 	*  The rate at which EaselJS calculates mouseover events, in times/second.
-	*  @property {Boolean} mouseOverRate
+	*  @property {int} mouseOverRate
 	*  @public
+	*  @default 30
 	*/
 	p.mouseOverRate = 30;
 

@@ -43,10 +43,6 @@
             
                 <li><a href="../classes/AnimatorTimeline.html">AnimatorTimeline</a></li>
             
-                <li><a href="../classes/BitmapMovieClip.html">BitmapMovieClip</a></li>
-            
-                <li><a href="../classes/BitmapUtils.html">BitmapUtils</a></li>
-            
                 <li><a href="../classes/Button.html">Button</a></li>
             
                 <li><a href="../classes/CharacterClip.html">CharacterClip</a></li>
@@ -60,10 +56,6 @@
                 <li><a href="../classes/Positioner.html">Positioner</a></li>
             
                 <li><a href="../classes/ScreenSettings.html">ScreenSettings</a></li>
-            
-                <li><a href="../classes/Texture.html">Texture</a></li>
-            
-                <li><a href="../classes/TextureAtlas.html">TextureAtlas</a></li>
             
                 <li><a href="../classes/UIElement.html">UIElement</a></li>
             
@@ -155,7 +147,12 @@
 		{
 			this.stage = new createjs.Stage(id);
 		}
-		this.stage.autoClear = !!this.options.clearView;
+		this.stage.autoClear = !!options.clearView;
+		// prevent mouse down turning into text cursor
+		this.canvas.onmousedown = function(e)
+		{
+			e.preventDefault();
+		};
 		this.enabled = true;//enable mouse/touch input
 	};
 
@@ -310,6 +307,7 @@
 	{
 		this.enabled = false;
 		this.stage.removeAllChildren(true);
+		this.canvas.onmousedown = null;
 		this.stage = this.canvas = null;
 	};
 

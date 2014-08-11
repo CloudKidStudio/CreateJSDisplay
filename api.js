@@ -3,8 +3,6 @@ YUI.add("yuidoc-meta", function(Y) {
     "classes": [
         "Animator",
         "AnimatorTimeline",
-        "BitmapMovieClip",
-        "BitmapUtils",
         "Button",
         "CharacterClip",
         "CharacterController",
@@ -12,8 +10,6 @@ YUI.add("yuidoc-meta", function(Y) {
         "DragManager",
         "Positioner",
         "ScreenSettings",
-        "Texture",
-        "TextureAtlas",
         "UIElement",
         "UIElementSettings",
         "UIScaler"

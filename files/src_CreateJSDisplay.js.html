@@ -154,6 +154,13 @@
 			e.preventDefault();
 		};
 		this.enabled = true;//enable mouse/touch input
+		/**
+		*  The Animator class to use when using this display.
+		*  @property {Animator} Animator
+		*  @readOnly
+		*  @public
+		*/
+		this.Animator = cloudkid.createjs.Animator;
 	};
 
 	var p = CreateJSDisplay.prototype = {};

@@ -2769,7 +2769,20 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 50,
+            "line": 46,
+            "description": "The Animator class to use when using this display.",
+            "itemtype": "property",
+            "name": "Animator",
+            "type": "Animator",
+            "readonly": "",
+            "access": "public",
+            "tagname": "",
+            "class": "CreateJSDisplay",
+            "module": "cloudkid"
+        },
+        {
+            "file": "src/CreateJSDisplay.js",
+            "line": 57,
             "description": "the canvas managed by this display",
             "itemtype": "property",
             "name": "canvas",
@@ -2782,7 +2795,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 58,
+            "line": 65,
             "description": "The DOM id for the canvas",
             "itemtype": "property",
             "name": "id",
@@ -2795,7 +2808,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 66,
+            "line": 73,
             "description": "Convenience method for getting the width of the canvas element\nwould be the same thing as canvas.width",
             "itemtype": "property",
             "name": "width",
@@ -2808,7 +2821,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 75,
+            "line": 82,
             "description": "Convenience method for getting the height of the canvas element\nwould be the same thing as canvas.height",
             "itemtype": "property",
             "name": "height",
@@ -2821,7 +2834,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 84,
+            "line": 91,
             "description": "The rendering library's stage element, the root display object",
             "itemtype": "property",
             "name": "",
@@ -2834,7 +2847,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 92,
+            "line": 99,
             "description": "If rendering is paused on this display only. Pausing all displays can be done\nusing Application.paused setter.",
             "itemtype": "property",
             "name": "paused",
@@ -2846,7 +2859,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 100,
+            "line": 107,
             "description": "The rate at which EaselJS calculates mouseover events, in times/second.",
             "itemtype": "property",
             "name": "mouseOverRate",
@@ -2859,7 +2872,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 108,
+            "line": 115,
             "description": "If input is enabled on the stage.",
             "itemtype": "property",
             "name": "_enabled",
@@ -2871,7 +2884,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 115,
+            "line": 122,
             "description": "If input is enabled on the stage for this display. The default is true.",
             "itemtype": "property",
             "name": "enabled",
@@ -2883,7 +2896,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 140,
+            "line": 147,
             "description": "If the display is visible.",
             "itemtype": "property",
             "name": "_visible",
@@ -2895,7 +2908,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 147,
+            "line": 154,
             "description": "If the display is visible, using \"display: none\" css on the canvas. Invisible displays won't render.",
             "itemtype": "property",
             "name": "visible",
@@ -2907,7 +2920,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 161,
+            "line": 168,
             "description": "Resizes the canvas. This is only called by the Application.",
             "itemtype": "method",
             "name": "resize",
@@ -2929,7 +2942,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 174,
+            "line": 181,
             "description": "Updates the stage and draws it. This is only called by the Application. \nThis method does nothing if paused is true or visible is false.",
             "itemtype": "method",
             "name": "render",
@@ -2946,7 +2959,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 188,
+            "line": 195,
             "description": "Destroys the display. This method is called by the Application and should \nnot be called directly, use Application.removeDisplay(id). \nThe stage recursively removes all display objects here.",
             "itemtype": "method",
             "name": "destroy",
@@ -3565,15 +3578,15 @@
         },
         {
             "message": "unknown tag: internal",
-            "line": " src/CreateJSDisplay.js:161"
+            "line": " src/CreateJSDisplay.js:168"
         },
         {
             "message": "unknown tag: internal",
-            "line": " src/CreateJSDisplay.js:174"
+            "line": " src/CreateJSDisplay.js:181"
         },
         {
             "message": "unknown tag: internal",
-            "line": " src/CreateJSDisplay.js:188"
+            "line": " src/CreateJSDisplay.js:195"
         },
         {
             "message": "Missing item type",

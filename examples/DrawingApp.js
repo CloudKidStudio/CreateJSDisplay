@@ -42,8 +42,6 @@
 		stage = this.display.stage;
 		stage.addEventListener('stagemouseup', handleMouseUp);
 		stage.addEventListener('stagemousedown', handleMouseDown);
-		
-		stage.enableMouseOver(30);
 
 		this.on("update", this.update.bind(this));
 		

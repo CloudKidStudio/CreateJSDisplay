@@ -141,6 +141,7 @@
 				this.stage.enableMouseOver(false);
 				this.stage.enableDOMEvents(false);
 				createjs.Touch.disable(this.stage);
+				this.canvas.style.cursor = "";//reset the cursor
 			}
 		}
 	});

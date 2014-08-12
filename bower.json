@@ -10,7 +10,7 @@
 	"ignore": [
 		"Gruntfile.js",
 		"build.json",
-		"example",
+		"examples",
 		"docs",
 		"src"
 	]

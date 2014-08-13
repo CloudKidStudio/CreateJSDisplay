@@ -176,8 +176,8 @@
 	*/
 	p.resize = function(width, height)
 	{
-		this.canvas.width = width;
-		this.canvas.height = height;
+		this.width = this.canvas.width = width;
+		this.height = this.canvas.height = height;
 	};
 
 	/** 

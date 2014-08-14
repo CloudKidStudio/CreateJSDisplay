@@ -641,7 +641,10 @@
 				if(t.soundInst.isValid)
 				{
 					//convert sound position ms -> sec
-					t.time = t.soundStart + t.soundInst.position * 0.001;
+					var audioPos = t.soundInst.position * 0.001;
+					if(audioPos < 0)
+						audioPos = 0;
+					t.time = t.soundStart + audioPos;
 					
 					if (t.useCaptions)
 					{
@@ -654,6 +657,7 @@
 					{
 						instance.gotoAndStop(t.lastFrame);
 						_removedTimelines.push(t);
+						continue;
 					}
 				}
 				//if sound is no longer valid, stop animation playback immediately
@@ -678,6 +682,7 @@
 					{
 						instance.gotoAndStop(t.lastFrame);
 						_removedTimelines.push(t);
+						continue;
 					}
 				}
 				if(t.playSound && t.time >= t.soundStart)

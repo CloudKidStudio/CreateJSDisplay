@@ -256,11 +256,11 @@
 	* The instance of cloudkid.Audio or cloudkid.Sound for playing audio along with animations.
 	* This MUST be set in order to play synced animations.
 	* 
-	* @property {cloudkid.Audio|cloudkid.Sound} audioLib
+	* @property {cloudkid.Audio|cloudkid.Sound} soundLib
 	* @public
 	* @static
 	*/
-	Animator.audioLib = null;
+	Animator.soundLib = null;
 
 	/**
 	*  The global captions object to use with animator
@@ -410,9 +410,9 @@
 			_timelinesMap[instance.id] = timeline;
 
 			//If the sound doesn't play immediately and we can preload it, we should do that
-			if(timeline.soundStart > 0 && Animator.audioLib.preloadSound)
+			if(timeline.soundStart > 0 && Animator.soundLib.preloadSound)
 			{
-				Animator.audioLib.preloadSound(timeline.soundAlias);
+				Animator.soundLib.preloadSound(timeline.soundAlias);
 			}
 			
 			return timeline;
@@ -904,7 +904,7 @@
 				if(t.playSound && t.time >= t.soundStart)
 				{
 					t.time = t.soundStart;
-					t.soundInst = Animator.audioLib.play(
+					t.soundInst = Animator.soundLib.play(
 						t.soundAlias, 
 						onSoundDone.bind(this, t), 
 						onSoundStarted.bind(this, t)

@@ -1265,7 +1265,7 @@
             "line": 39,
             "description": "The instance of cloudkid.Audio or cloudkid.Sound for playing audio along with animations.\nThis MUST be set in order to play synced animations.",
             "itemtype": "property",
-            "name": "audioLib",
+            "name": "soundLib",
             "type": "cloudkid.Audio|cloudkid.Sound",
             "access": "public",
             "tagname": "",

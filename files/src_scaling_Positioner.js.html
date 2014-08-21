@@ -214,7 +214,9 @@
 		else if(hitArea.type == &quot;ellipse&quot;)
 			return new createjs.Ellipse((hitArea.x - hitArea.w * 0.5) * scale, (hitArea.y - hitArea.h * 0.5) * scale, hitArea.w * scale, hitArea.h * scale);//convert center to upper left corner
 		else if(hitArea.type == &quot;circle&quot;)
-			return new createjs.Circle(hitArea.x * scale, hitArea.y * scale, hitArea.r * scale);//x &amp; y are center, pixi documentation lies
+			return new createjs.Circle(hitArea.x * scale, hitArea.y * scale, hitArea.r * scale);
+		else if(hitArea.type == &quot;sector&quot;)
+			return new createjs.Sector(hitArea.x * scale, hitArea.y * scale, hitArea.r * scale, hitArea.start, hitArea.end);
 		return null;
 	};
 

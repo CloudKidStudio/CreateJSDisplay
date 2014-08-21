@@ -251,6 +251,7 @@
 				this.stage.enableMouseOver(false);
 				this.stage.enableDOMEvents(false);
 				createjs.Touch.disable(this.stage);
+				this.canvas.style.cursor = &quot;&quot;;//reset the cursor
 			}
 		}
 	});
@@ -285,8 +286,8 @@
 	*/
 	p.resize = function(width, height)
 	{
-		this.canvas.width = width;
-		this.canvas.height = height;
+		this.width = this.canvas.width = width;
+		this.height = this.canvas.height = height;
 	};
 
 	/** 

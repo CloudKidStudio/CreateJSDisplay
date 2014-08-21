@@ -1265,7 +1265,7 @@
             "line": 39,
             "description": "The instance of cloudkid.Audio or cloudkid.Sound for playing audio along with animations.\nThis MUST be set in order to play synced animations.",
             "itemtype": "property",
-            "name": "soundLib",
+            "name": "audioLib",
             "type": "cloudkid.Audio|cloudkid.Sound",
             "access": "public",
             "tagname": "",
@@ -1793,7 +1793,7 @@
         },
         {
             "file": "src/Animator.js",
-            "line": 710,
+            "line": 715,
             "description": "The sound has been started",
             "itemtype": "method",
             "name": "onSoundStarted",
@@ -1811,7 +1811,7 @@
         },
         {
             "file": "src/Animator.js",
-            "line": 722,
+            "line": 727,
             "description": "The sound is done",
             "itemtype": "method",
             "name": "onSoundDone",
@@ -1829,7 +1829,7 @@
         },
         {
             "file": "src/Animator.js",
-            "line": 735,
+            "line": 740,
             "description": "Check to see if we have timeline",
             "itemtype": "method",
             "name": "_hasTimelines",
@@ -1845,7 +1845,7 @@
         },
         {
             "file": "src/Animator.js",
-            "line": 749,
+            "line": 754,
             "description": "String representation of this class",
             "itemtype": "method",
             "name": "toString",
@@ -2896,7 +2896,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 147,
+            "line": 148,
             "description": "If the display is visible.",
             "itemtype": "property",
             "name": "_visible",
@@ -2908,7 +2908,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 154,
+            "line": 155,
             "description": "If the display is visible, using \"display: none\" css on the canvas. Invisible displays won't render.",
             "itemtype": "property",
             "name": "visible",
@@ -2920,7 +2920,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 168,
+            "line": 169,
             "description": "Resizes the canvas. This is only called by the Application.",
             "itemtype": "method",
             "name": "resize",
@@ -2942,7 +2942,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 181,
+            "line": 182,
             "description": "Updates the stage and draws it. This is only called by the Application. \nThis method does nothing if paused is true or visible is false.",
             "itemtype": "method",
             "name": "render",
@@ -2959,7 +2959,7 @@
         },
         {
             "file": "src/CreateJSDisplay.js",
-            "line": 195,
+            "line": 196,
             "description": "Destroys the display. This method is called by the Application and should \nnot be called directly, use Application.removeDisplay(id). \nThe stage recursively removes all display objects here.",
             "itemtype": "method",
             "name": "destroy",
@@ -3534,11 +3534,11 @@
         },
         {
             "message": "replacing incorrect tag: function with method",
-            "line": " src/Animator.js:735"
+            "line": " src/Animator.js:740"
         },
         {
             "message": "replacing incorrect tag: function with method",
-            "line": " src/Animator.js:749"
+            "line": " src/Animator.js:754"
         },
         {
             "message": "replacing incorrect tag: function with method",
@@ -3578,15 +3578,15 @@
         },
         {
             "message": "unknown tag: internal",
-            "line": " src/CreateJSDisplay.js:168"
+            "line": " src/CreateJSDisplay.js:169"
         },
         {
             "message": "unknown tag: internal",
-            "line": " src/CreateJSDisplay.js:181"
+            "line": " src/CreateJSDisplay.js:182"
         },
         {
             "message": "unknown tag: internal",
-            "line": " src/CreateJSDisplay.js:195"
+            "line": " src/CreateJSDisplay.js:196"
         },
         {
             "message": "Missing item type",

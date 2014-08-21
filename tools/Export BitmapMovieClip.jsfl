@@ -99,6 +99,10 @@
 	if(scale != 1)
 		resizeClip(selectedItem.timeline, scale);*/
 	var outputObj = {};
+	/*
+	//keep track of this for proper reassembly
+	outputObj.scale = scale;
+	*/
 	outputObj.fps = doc.frameRate;
 	outputObj.labels = {};
 	//get all those pesky frame labels
@@ -130,8 +134,6 @@
 	data.min = 0;//flash frame numbers start at 0 when you use the spritesheet exporter
 	data.max = timeline.frameCount - 1;//go until the end
 	data.digits = 4;//flash frame numbers always have 4 digits
-	//keep track of this for proper reassembly
-	outputObj.scale = scale;
 	//get the origin
 	var left = 100000000;
 	var top = 100000000;

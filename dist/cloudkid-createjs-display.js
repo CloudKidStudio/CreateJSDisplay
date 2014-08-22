@@ -1785,6 +1785,7 @@
 	*  @param {Number} [highlightSettings.green] The green value for the glow, from 0 to 255.
 	*  @param {Number} [highlightSettings.blue] The blue value for the glow, from 0 to 255.
 	*  @param {Number} [highlightSettings.alpha] The alpha value for the glow, from 0 to 255, with 0 being transparent and 255 fully opaque.
+	*  @param {Array} [highlightSettings.rgba] Inline red, green, blue, and alpha channels
 	*/
 	Button.generateDefaultStates = function(image, disabledSettings, highlightSettings)
 	{
@@ -1803,6 +1804,13 @@
 		{
 			width += highlightSettings.size * 2;
 			height += buttonHeight + highlightSettings.size * 2;
+			if (highlightSettings.rgba)
+			{
+				highlightSettings.red = highlightSettings.rgba[0];
+				highlightSettings.green = highlightSettings.rgba[1];
+				highlightSettings.blue = highlightSettings.rgba[2];
+				if (highlightSettings.rgba[3]) highlightSettings.alpha = highlightSettings.rgba[3];
+			}
 		}
 		canvas.width = width;
 		canvas.height = height;

@@ -273,8 +273,8 @@
             "module": "cloudkid",
             "namespace": "",
             "file": "src/Button.js",
-            "line": 8,
-            "description": "A Multipurpose button class. It is designed to have one image, and an optional text label.\nThe button can be a normal button or a selectable button.\nThe button functions similarly with both CreateJS and PIXI, but slightly differently in\ninitialization and callbacks. Add event listeners for click and mouseover to know about \nbutton clicks and mouse overs, respectively.",
+            "line": 9,
+            "description": "A Multipurpose button class. It is designed to have one image, and an optional text label.\nThe button can be a normal button or a selectable button.\nThe button functions similarly with both CreateJS and PIXI, but slightly differently in\ninitialization and callbacks. Add event listeners for click and mouseover to know about\nbutton clicks and mouse overs, respectively.",
             "extends": "createjs.Container",
             "is_constructor": 1,
             "params": [
@@ -311,14 +311,14 @@
                                 },
                                 {
                                     "name": "trim",
-                                    "description": "Trim data about the state, where x & y are how many pixels were \n       trimmed off the left and right, and height & width are the untrimmed size of the button.",
+                                    "description": "Trim data about the state, where x & y are how many pixels were\n       trimmed off the left and right, and height & width are the untrimmed size of the button.",
                                     "type": "createjs.Rectangle",
                                     "optional": true,
                                     "optdefault": "null"
                                 },
                                 {
                                     "name": "label",
-                                    "description": "Label information specific to this state. Properties on this parameter override data \n       in the label parameter for this button state only. All values except \"text\" from the label parameter may be overridden.",
+                                    "description": "Label information specific to this state. Properties on this parameter override data\n       in the label parameter for this button state only. All values except \"text\" from the label parameter may be overridden.",
                                     "type": "Object",
                                     "optional": true,
                                     "optdefault": "null"
@@ -340,14 +340,14 @@
                                 },
                                 {
                                     "name": "trim",
-                                    "description": "Trim data about the state, where x & y are how many pixels were \n       trimmed off the left and right, and height & width are the untrimmed size of the button.",
+                                    "description": "Trim data about the state, where x & y are how many pixels were\n       trimmed off the left and right, and height & width are the untrimmed size of the button.",
                                     "type": "createjs.Rectangle",
                                     "optional": true,
                                     "optdefault": "null"
                                 },
                                 {
                                     "name": "label",
-                                    "description": "Label information specific to this state. Properties on this parameter override data \n       in the label parameter for this button state only. All values except \"text\" from the label parameter may be overridden.",
+                                    "description": "Label information specific to this state. Properties on this parameter override data\n       in the label parameter for this button state only. All values except \"text\" from the label parameter may be overridden.",
                                     "type": "Object",
                                     "optional": true,
                                     "optdefault": "null"
@@ -369,14 +369,14 @@
                                 },
                                 {
                                     "name": "trim",
-                                    "description": "Trim data about the state, where x & y are how many pixels were \n       trimmed off the left and right, and height & width are the untrimmed size of the button.",
+                                    "description": "Trim data about the state, where x & y are how many pixels were\n       trimmed off the left and right, and height & width are the untrimmed size of the button.",
                                     "type": "createjs.Rectangle",
                                     "optional": true,
                                     "optdefault": "null"
                                 },
                                 {
                                     "name": "label",
-                                    "description": "Label information specific to this state. Properties on this parameter override data \n       in the label parameter for this button state only. All values except \"text\" from the label parameter may be overridden.",
+                                    "description": "Label information specific to this state. Properties on this parameter override data\n       in the label parameter for this button state only. All values except \"text\" from the label parameter may be overridden.",
                                     "type": "Object",
                                     "optional": true,
                                     "optdefault": "null"
@@ -398,14 +398,14 @@
                                 },
                                 {
                                     "name": "trim",
-                                    "description": "Trim data about the state, where x & y are how many pixels were \n       trimmed off the left and right, and height & width are the untrimmed size of the button.",
+                                    "description": "Trim data about the state, where x & y are how many pixels were\n       trimmed off the left and right, and height & width are the untrimmed size of the button.",
                                     "type": "createjs.Rectangle",
                                     "optional": true,
                                     "optdefault": "null"
                                 },
                                 {
                                     "name": "label",
-                                    "description": "Label information specific to this state. Properties on this parameter override \n       data in the label parameter for this button state only. All values except \"text\" from the label parameter may be overridden.",
+                                    "description": "Label information specific to this state. Properties on this parameter override\n       data in the label parameter for this button state only. All values except \"text\" from the label parameter may be overridden.",
                                     "type": "Object",
                                     "optional": true,
                                     "optdefault": "null"
@@ -427,14 +427,14 @@
                                 },
                                 {
                                     "name": "trim",
-                                    "description": "Trim data about the state, where x & y are how many pixels \n       were trimmed off the left and right, and height & width are the untrimmed size of the button.",
+                                    "description": "Trim data about the state, where x & y are how many pixels\n       were trimmed off the left and right, and height & width are the untrimmed size of the button.",
                                     "type": "createjs.Rectangle",
                                     "optional": true,
                                     "optdefault": "null"
                                 },
                                 {
                                     "name": "label",
-                                    "description": "Label information specific to this state. Properties on this parameter \n       override data in the label parameter for this button state only. All values except \"text\" from the label parameter may be\n       overridden.",
+                                    "description": "Label information specific to this state. Properties on this parameter\n       override data in the label parameter for this button state only. All values except \"text\" from the label parameter may be\n       overridden.",
                                     "type": "Object",
                                     "optional": true,
                                     "optdefault": "null"
@@ -443,7 +443,7 @@
                         },
                         {
                             "name": "origin",
-                            "description": "An optional offset for all button graphics, in case you want button \n       positioning to not include a highlight glow, or any other reason you would want to offset the button art and label.",
+                            "description": "An optional offset for all button graphics, in case you want button\n       positioning to not include a highlight glow, or any other reason you would want to offset the button art and label.",
                             "type": "createjs.Point",
                             "optional": true,
                             "optdefault": "null"
@@ -2090,7 +2090,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 84,
+            "line": 85,
             "description": "The sprite that is the body of the button.",
             "access": "public",
             "tagname": "",
@@ -2103,7 +2103,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 92,
+            "line": 93,
             "description": "The text field of the button. The label is centered by both width and height on the button.",
             "access": "public",
             "tagname": "",
@@ -2116,7 +2116,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 101,
+            "line": 102,
             "description": "Callback for mouse over, bound to this button.",
             "access": "private",
             "tagname": "",
@@ -2128,7 +2128,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 108,
+            "line": 109,
             "description": "Callback for mouse out, bound to this button.",
             "access": "private",
             "tagname": "",
@@ -2140,7 +2140,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 115,
+            "line": 116,
             "description": "Callback for mouse down, bound to this button.",
             "access": "private",
             "tagname": "",
@@ -2152,7 +2152,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 122,
+            "line": 123,
             "description": "Callback for press up, bound to this button.",
             "access": "private",
             "tagname": "",
@@ -2164,7 +2164,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 129,
+            "line": 130,
             "description": "Callback for click, bound to this button.",
             "access": "private",
             "tagname": "",
@@ -2176,7 +2176,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 136,
+            "line": 137,
             "description": "A dictionary of state booleans, keyed by state name.",
             "access": "private",
             "tagname": "",
@@ -2188,7 +2188,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 142,
+            "line": 143,
             "description": "An array of state names (Strings), in their order of priority.\nThe standard order previously was [\"highlighted\", \"disabled\", \"down\", \"over\", \"selected\", \"up\"].",
             "access": "private",
             "tagname": "",
@@ -2200,7 +2200,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 150,
+            "line": 151,
             "description": "A dictionary of state graphic data, keyed by state name.\nEach object contains the sourceRect (src) and optionally 'trim', another Rectangle.\nAdditionally, each object will contain a 'label' object if the button has a text label.",
             "access": "private",
             "tagname": "",
@@ -2212,7 +2212,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 159,
+            "line": 160,
             "description": "The width of the button art, independent of the scaling of the button itself.",
             "access": "private",
             "tagname": "",
@@ -2224,7 +2224,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 166,
+            "line": 167,
             "description": "The height of the button art, independent of the scaling of the button itself.",
             "access": "private",
             "tagname": "",
@@ -2236,7 +2236,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 173,
+            "line": 174,
             "description": "An offset to button positioning, generally used to adjust for a highlight around the button.",
             "access": "private",
             "tagname": "",
@@ -2248,7 +2248,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 180,
+            "line": 181,
             "description": "An event for when the button is pressed (while enabled).",
             "access": "public",
             "tagname": "",
@@ -2261,7 +2261,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 203,
+            "line": 204,
             "description": "Constructor for the button when using CreateJS.",
             "itemtype": "method",
             "name": "initialize",
@@ -2292,7 +2292,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 357,
+            "line": 365,
             "description": "The width of the button, based on the width of back. This value is affected by scale.",
             "itemtype": "property",
             "name": "width",
@@ -2302,7 +2302,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 368,
+            "line": 381,
             "description": "The height of the button, based on the height of back. This value is affected by scale.",
             "itemtype": "property",
             "name": "height",
@@ -2312,7 +2312,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 379,
+            "line": 397,
             "description": "Sets the text of the label. This does nothing if the button was not initialized with a label.",
             "access": "public",
             "tagname": "",
@@ -2330,7 +2330,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 413,
+            "line": 431,
             "description": "Whether or not the button is enabled.",
             "itemtype": "property",
             "name": "enabled",
@@ -2341,7 +2341,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 446,
+            "line": 468,
             "description": "Adds a property to the button. Setting the property sets the value in\n_stateFlags and calls _updateState().",
             "access": "private",
             "tagname": "",
@@ -2359,7 +2359,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 468,
+            "line": 494,
             "description": "Updates back based on the current button state.",
             "access": "private",
             "tagname": "",
@@ -2370,7 +2370,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 523,
+            "line": 549,
             "description": "The callback for when the button receives a mouse down event.",
             "access": "private",
             "tagname": "",
@@ -2381,7 +2381,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 536,
+            "line": 562,
             "description": "The callback for when the button for when the mouse/touch is released on the button\n- only when the button was held down initially.",
             "access": "private",
             "tagname": "",
@@ -2392,7 +2392,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 551,
+            "line": 577,
             "description": "The callback for when the button the button is clicked or tapped on. This is\nthe most reliable way of detecting mouse up/touch end events that are on this button\nwhile letting the pressup event handle the mouse up/touch ends on and outside the button.",
             "access": "private",
             "tagname": "",
@@ -2403,7 +2403,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 563,
+            "line": 589,
             "description": "The callback for when the button is moused over.",
             "access": "private",
             "tagname": "",
@@ -2414,7 +2414,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 574,
+            "line": 600,
             "description": "The callback for when the mouse leaves the button area.",
             "access": "private",
             "tagname": "",
@@ -2425,7 +2425,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 585,
+            "line": 611,
             "description": "Destroys the button.",
             "access": "public",
             "tagname": "",
@@ -2436,7 +2436,7 @@
         },
         {
             "file": "src/Button.js",
-            "line": 605,
+            "line": 631,
             "description": "Generates a desaturated up state as a disabled state, and an update with a solid colored glow for a highlighted state.",
             "itemtype": "method",
             "name": "generateDefaultStates",
@@ -2455,19 +2455,19 @@
                     "props": [
                         {
                             "name": "saturation",
-                            "description": "The saturation adjustment for the disabled state. \n       100 is fully saturated, 0 is unchanged, -100 is desaturated.",
+                            "description": "The saturation adjustment for the disabled state.\n\t\t\t100 is fully saturated, 0 is unchanged, -100 is desaturated.",
                             "type": "Number",
                             "optional": true
                         },
                         {
                             "name": "brightness",
-                            "description": "The brightness adjustment for the disabled state. \n       100 is fully bright, 0 is unchanged, -100 is completely dark.",
+                            "description": "The brightness adjustment for the disabled state.\n\t\t\t100 is fully bright, 0 is unchanged, -100 is completely dark.",
                             "type": "Number",
                             "optional": true
                         },
                         {
                             "name": "contrast",
-                            "description": "The contrast adjustment for the disabled state. \n       100 is full contrast, 0 is unchanged, -100 is no contrast.",
+                            "description": "The contrast adjustment for the disabled state.\n\t\t\t100 is full contrast, 0 is unchanged, -100 is no contrast.",
                             "type": "Number",
                             "optional": true
                         }
@@ -2507,6 +2507,13 @@
                             "name": "alpha",
                             "description": "The alpha value for the glow, from 0 to 255, with 0 being transparent and 255 fully opaque.",
                             "type": "Number",
+                            "optional": true,
+                            "optdefault": "255"
+                        },
+                        {
+                            "name": "rgba",
+                            "description": "An array of values to use for red, green, blue, and optionally alpha that can be used\n\t\t\tinstead of providing separate properties on highlightSettings.",
+                            "type": "Array",
                             "optional": true
                         }
                     ]

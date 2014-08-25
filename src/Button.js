@@ -635,21 +635,22 @@
 	 *  @param {Image|HTMLCanvasElement} image The image to use for all of the button states, in the standard up/over/down format.
 	 *  @param {Object} [disabledSettings] The settings object for the disabled state. If omitted, no disabled state is created.
 	 *  @param {Number} [disabledSettings.saturation] The saturation adjustment for the disabled state.
-	 *         100 is fully saturated, 0 is unchanged, -100 is desaturated.
+	 *			100 is fully saturated, 0 is unchanged, -100 is desaturated.
 	 *  @param {Number} [disabledSettings.brightness] The brightness adjustment for the disabled state.
-	 *         100 is fully bright, 0 is unchanged, -100 is completely dark.
+	 *			100 is fully bright, 0 is unchanged, -100 is completely dark.
 	 *  @param {Number} [disabledSettings.contrast] The contrast adjustment for the disabled state.
-	 *         100 is full contrast, 0 is unchanged, -100 is no contrast.
+	 *			100 is full contrast, 0 is unchanged, -100 is no contrast.
 	 *  @param {Object} [highlightSettings] The settings object for the highlight state. If omitted, no state is created.
 	 *  @param {Number} [highlightSettings.size] How many pixels to make the glow, eg 8 for an 8 pixel increase on each side.
 	 *  @param {Number} [highlightSettings.red] The red value for the glow, from 0 to 255.
 	 *  @param {Number} [highlightSettings.green] The green value for the glow, from 0 to 255.
 	 *  @param {Number} [highlightSettings.blue] The blue value for the glow, from 0 to 255.
 	 *  @param {Number} [highlightSettings.alpha] The alpha value for the glow, from 0 to 255, with 0 being transparent and 255 fully opaque.
+	 *  @param {Array} [highlightSettings.rgba] An array of values to use for red, green, blue, and optionally alpha that can be used
+	 *			instead of providing separate properties on highlightSettings.
 	 */
 	Button.generateDefaultStates = function(image, disabledSettings, highlightSettings)
 	{
-		Debug.log("hi");
 		//figure out the normal button size
 		var buttonWidth = image.width;
 		var buttonHeight = image.height / 3;

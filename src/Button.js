@@ -645,7 +645,7 @@
 	 *  @param {Number} [highlightSettings.red] The red value for the glow, from 0 to 255.
 	 *  @param {Number} [highlightSettings.green] The green value for the glow, from 0 to 255.
 	 *  @param {Number} [highlightSettings.blue] The blue value for the glow, from 0 to 255.
-	 *  @param {Number} [highlightSettings.alpha] The alpha value for the glow, from 0 to 255, with 0 being transparent and 255 fully opaque.
+	 *  @param {Number} [highlightSettings.alpha=255] The alpha value for the glow, from 0 to 255, with 0 being transparent and 255 fully opaque.
 	 *  @param {Array} [highlightSettings.rgba] An array of values to use for red, green, blue, and optionally alpha that can be used
 	 *			instead of providing separate properties on highlightSettings.
 	 */

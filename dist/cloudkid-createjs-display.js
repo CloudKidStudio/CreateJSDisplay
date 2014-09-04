@@ -2841,7 +2841,7 @@
 	*/
 	Positioner.positionItems = function(parent, itemSettings)
 	{
-		var rot, pt;
+		var pt;
 		for(var iName in itemSettings)
 		{
 			var item = parent[iName];
@@ -2851,8 +2851,10 @@
 				continue;
 			}
 			var setting = itemSettings[iName];
-			item.x = setting.x;
-			item.y = setting.y;
+			if(setting.x !== undefined)
+				item.x = setting.x;
+			if(setting.y !== undefined)
+				item.y = setting.y;
 			pt = setting.scale;
 			if(pt)
 			{
@@ -2865,9 +2867,8 @@
 				item.regX = pt.x;
 				item.regY = pt.y;
 			}
-			rot = setting.rotation;
-			if(rot)
-				item.rotation = rot;
+			if(setting.rotation !== undefined)
+				item.rotation = settings.rotation;
 			//item.name = iName;
 			if(setting.hitArea)
 			{
